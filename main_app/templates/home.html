@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}"/>
+{% endblock %}
+
+{% block content %}
+
+<section class="logo-container">
+  <div class="article-container">
+    <img src="{% static 'images/header-logo.png' %}" alt="Logo" />
+  </div>
+</section>
+
+{% endblock %}
