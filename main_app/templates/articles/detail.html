@@ -42,6 +42,10 @@
     <div class="like btn">
       <button>Like</button>
     </div>
+    <div class="article-actions">
+      <a href="{% url 'article-update' article.id %}" class="btn warn">Edit</a>
+      <a href="{% url 'article-delete' article.id %}" class="btn danger">Delete</a>
+    </div>
   </div>
 </section>
 
