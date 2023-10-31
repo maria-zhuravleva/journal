@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Article
 
 
@@ -19,6 +19,13 @@ def article_detail(request, article_id):
 
 class ArticleCreate(CreateView):
   model = Article
-  fields = '__all__'
   fields = ['title', 'content_main', 'content_section_1', 'content_section_2']
+  success_url = '/articles/'
+
+class ArticleUpdate(UpdateView):
+  model = Article
+  fields = '__all__'
+
+class ArticleDelete(DeleteView):
+  model = Article
   success_url = '/articles/'
