@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.views.generic.edit import CreateView
 from .models import Article
 
 
@@ -15,3 +16,7 @@ def article_index(request):
 def article_detail(request, article_id):
   article = Article.objects.get(id=article_id)
   return render(request, 'articles/detail.html', { 'article': article })
+
+class ArticleCreate(CreateView):
+  model = Article
+  fields = '__all__'
