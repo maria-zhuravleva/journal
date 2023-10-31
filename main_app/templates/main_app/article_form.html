@@ -8,15 +8,13 @@
 {% block content %}
 
 <div class="page-header">
-  <h1>Add an Article</h1>
+  {% if article %}
+    <h1>Edit {{ article.title }}</h1>
+  {% else %}
+    <h1>Add an Article</h1>
+  {% endif %}
 </div>
-{% comment %} 
-  Leaving the action empty makes the form post to the same url used to display it
-{% endcomment %}
 <form action="" method="post" class="form-container">
-  {% comment %} 
-    Django requires the following for security purposes
-  {% endcomment %}
   {% csrf_token %}
   <table>
     {% comment %}

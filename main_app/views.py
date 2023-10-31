@@ -24,7 +24,7 @@ class ArticleCreate(CreateView):
 
 class ArticleUpdate(UpdateView):
   model = Article
-  fields = '__all__'
+  fields = ['title', 'content_main', 'content_section_1', 'content_section_2']
 
 class ArticleDelete(DeleteView):
   model = Article
