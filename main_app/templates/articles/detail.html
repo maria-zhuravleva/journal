@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link 
+  rel="stylesheet" 
+  type="text/css" 
+  href="{% static 'css/articles/article-detail.css' %}"
+/>
+{% endblock %}
+
+{% block content %}
+
+<section class="article-container">
+  <div class="article-img">
+    <img 
+      src="{% static 'images/header-logo.png' %}" 
+      alt="A logo"
+    >
+  </div>
+  <div class="article-details">
+    <div class="article-title">
+      <h1>{{ article.title }}</h1>
+    </div>
+    <div class="content-main">
+      <p>{{ article.content_main }}</p>
+    </div>
+    <div class="photo-section1">
+      {% comment %} photo {% endcomment %}
+    </div>
+    <div class="content-section1-container">
+      <div class="content-section1">
+        <p></p>
+      </div>
+      <div class="photo-section2">
+        {% comment %} photo {% endcomment %}
+      </div>
+    </div>
+    <div class="content-section2">
+      <p></p>
+    </div>
+    <div class="like btn">
+      <button>Like</button>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
