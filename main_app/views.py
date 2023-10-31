@@ -20,3 +20,5 @@ def article_detail(request, article_id):
 class ArticleCreate(CreateView):
   model = Article
   fields = '__all__'
+  fields = ['title', 'content_main', 'content_section_1', 'content_section_2']
+  success_url = '/articles/'
