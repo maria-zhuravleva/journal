@@ -28,8 +28,9 @@
     </div> 
     <nav>
       <ul>
-        <li><a href="/articles">Articles</a></li>
-        <li><a href="/about">About</a></li>
+        <li><a href="{% url 'article-index' %}">Articles</a></li>
+        <li><a href="{% url 'article-create' %}">Add an Article</a></li>
+        <li><a href="{% url 'about' %}">About</a></li>
       </ul>
     </nav>
   </header>
