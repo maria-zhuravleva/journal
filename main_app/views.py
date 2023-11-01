@@ -4,6 +4,7 @@ from django.contrib.auth.views import LoginView
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import UserPassesTestMixin
 from .models import Article
 
 
@@ -22,21 +23,30 @@ def article_detail(request, article_id):
   article = Article.objects.get(id=article_id)
   return render(request, 'articles/detail.html', { 'article': article })
 
-class ArticleCreate(CreateView):
+class ArticleCreate(UserPassesTestMixin, CreateView):
   model = Article
   fields = ['title', 'content_main', 'content_section_1', 'content_section_2']
 
   def form_valid(self, form):
     form.instance.user = self.request.user 
     return super().form_valid(form)
+  
+  def test_func(self):
+    return self.request.user.is_superuser
 
-class ArticleUpdate(UpdateView):
+class ArticleUpdate(UserPassesTestMixin, UpdateView):
   model = Article
   fields = ['title', 'content_main', 'content_section_1', 'content_section_2']
 
-class ArticleDelete(DeleteView):
+  def test_func(self):
+    return self.request.user.is_superuser
+
+class ArticleDelete(UserPassesTestMixin, DeleteView):
   model = Article
   success_url = '/articles/'
+
+  def test_func(self):
+    return self.request.user.is_superuser
 
 def signup(request):
   error_message = ''
