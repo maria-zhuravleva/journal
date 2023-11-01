@@ -21,7 +21,10 @@ def article_detail(request, article_id):
 class ArticleCreate(CreateView):
   model = Article
   fields = ['title', 'content_main', 'content_section_1', 'content_section_2']
-  success_url = '/articles/'
+
+  def form_valid(self, form):
+    form.instance.user = self.request.user 
+    return super().form_valid(form)
 
 class ArticleUpdate(UpdateView):
   model = Article
