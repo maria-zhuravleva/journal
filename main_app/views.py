@@ -3,6 +3,7 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth.views import LoginView
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.decorators import login_required
 from .models import Article
 
 
@@ -16,6 +17,7 @@ def article_index(request):
   articles = Article.objects.all()
   return render(request, 'articles/index.html', { 'articles': articles })
 
+@login_required
 def article_detail(request, article_id):
   article = Article.objects.get(id=article_id)
   return render(request, 'articles/detail.html', { 'article': article })
