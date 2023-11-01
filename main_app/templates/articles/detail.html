@@ -39,13 +39,17 @@
     <div class="content-section2">
       <p></p>
     </div>
-    <div class="like btn">
-      <button>Like</button>
-    </div>
+    {% if user.is_authenticated %}
+      <div class="like btn">
+        <button>Like</button>
+      </div>
+    {% endif %}
     <div class="article-actions">
-      <a href="{% url 'article-update' article.id %}" class="btn warn">Edit</a>
-      <a href="{% url 'article-delete' article.id %}" class="btn danger">Delete</a>
-    </div>
+      {% if user.is_superuser %}
+        <a href="{% url 'article-update' article.id %}" class="btn warn">Edit</a>
+        <a href="{% url 'article-delete' article.id %}" class="btn danger">Delete</a>
+      {% endif %}
+    </div>    
   </div>
 </section>
 
