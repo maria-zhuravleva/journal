@@ -7,6 +7,7 @@
   type="text/css" 
   href="{% static 'css/articles/article-detail.css' %}"
 />
+<script defer src="{% static 'js/article-detail.js' %}"></script>
 {% endblock %}
 
 {% block content %}
@@ -41,7 +42,8 @@
     </div>
     {% if user.is_authenticated %}
       <div class="like btn">
-        <button>Like</button>
+        <img id="likeButton" src="{% static 'images/liked.png' %}" alt="like">
+        <span id="likeCount">{{ article.likes }}</span>
       </div>
     {% endif %}
     <div class="article-actions">
