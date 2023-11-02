@@ -20,6 +20,7 @@
     {{ form.password.label_tag }} {{ form.password }}
     <button type="submit" class="btn submit">Login</button>
   </form>
+  <p>Don't have an account yet? <a href="{% url 'signup' %}">Sign up here</a></p>
 </section>
 
 {% endblock %}
