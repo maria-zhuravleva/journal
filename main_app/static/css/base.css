@@ -1,5 +1,7 @@
 body {
-  background-color: rgb(239, 235, 224);
+  /* background-color: rgb(239, 235, 224); */
+  /* background-color: #f5f0ea; */
+  background-color: #f0e8dd;
 }
 
 nav {
@@ -14,7 +16,7 @@ ul {
 
 nav a {
   text-decoration: none;
-  color: black;
+  color: #191713;
   font-weight: 100;
   font-size: 15px;
 }
@@ -30,7 +32,7 @@ nav a {
 }
 
 nav a:hover {
-  color: olive;
+  color: #64613e;
 }
 
 nav ul {
