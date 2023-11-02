@@ -1,7 +1,25 @@
+@font-face {
+  font-family: 'Culture';
+  src: url('../font/Culture.otf') format('truetype');
+  font-family: 'Colgent';
+  src: url('../font/Colgent Regular.ttf') format('truetype');
+  font-family: 'FONTSPRING DEMO - The Seasons Light';
+  src: url('../Fontspring-DEMO-theseasons-lt.otf') format('truetype');
+}
+
 body {
   /* background-color: rgb(239, 235, 224); */
   /* background-color: #f5f0ea; */
+  font-family: 'Colgent', sans-serif; 
+  /* font-family: 'FONTSPRING DEMO - The Seasons Light', sans-serif;  */
   background-color: #f0e8dd;
+}
+
+p#main-heading {
+  font-family: 'FONTSPRING DEMO - The Seasons Light', sans-serif; 
+  /* font-family: 'Colgent', sans-serif;  */
+  color: #191713;
+  font-size: 25px;
 }
 
 nav {
@@ -22,13 +40,12 @@ nav a {
 }
 
 .header-logo-container {
-  width: 50px;
-  height: 50px;
+  width: 100%;
+  text-align: center;
 }
 
-.header-logo-container img{
-  width: 20px;
-  height: 20px;
+.header-logo-container a {
+  text-decoration: none;
 }
 
 nav a:hover {
