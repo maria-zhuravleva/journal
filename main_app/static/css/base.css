@@ -45,3 +45,9 @@ nav ul {
 nav li {
   padding: 5px 8px;
 }
+
+img#user-icon {
+  width: 13px;
+  height: 15px;
+  padding-top: 3px;
+}

@@ -38,8 +38,16 @@
         {% else %}
           <li><a href="{% url 'article-index' %}">Articles</a></li>
           <li><a href="{% url 'about' %}">About</a></li>
-          <li><a href="{% url 'home' %}">Login</a></li>
+          <li><a href="{% url 'login' %}">
+            <img id="user-icon"
+              src="{% static 'images/user.png' %}"
+              alt="User"
+            >
+          </a></li>
           <li><a href="{% url 'signup' %}">Sign Up</a></li>
+  
+          {% comment %} <li><a href="{% url 'home' %}">Login</a></li>
+          <li><a href="{% url 'signup' %}">Sign Up</a></li> {% endcomment %}
         {% endif %}
       </ul>
     </nav>    

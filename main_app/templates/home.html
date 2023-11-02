@@ -7,7 +7,7 @@
 
 {% block content %}
 
-{% if not user.is_authenticated %}
+{% comment %} {% if not user.is_authenticated %}
   <section>
     <form action="{% url 'home' %}" method="post" class="login">
       <h1>Login</h1>
@@ -17,7 +17,7 @@
       <button type="submit" class="btn submit">Login</button>
     </form>
   </section>
-{% endif %}
+{% endif %} {% endcomment %}
 
 <video id="landingVideo" autoplay muted loop src="{% static 'images/landing.mov' %}"></video>
 
