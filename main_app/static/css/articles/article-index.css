@@ -1,4 +1,4 @@
-.card-container {
+/* .card-container {
   padding: 0 30px;
   display: flex;
   justify-content: center;
@@ -8,8 +8,6 @@
 .card {
   width: 275px;
   margin: 10px;
-  /* border: var(--borders);
-  box-shadow: var(--card-box-shadow); */
 }
 
 .card-content {
@@ -17,22 +15,96 @@
   width: 100%;
 }
 
-/* .usr-img {
-  width: 100%;
-  border-radius: var(--card-border-radius);
-} */
-
 .card > a {
   text-decoration: none;
-  /* color: var(--text-color); */
 }
 
 .card h2 {
   margin: 10px 0;
-  /* font-size: var(--font-xl); */
 }
 
 .card p {
   margin: 5px 0;
-  /* font-size: var(--font-reg); */
+} */
+
+.page-header {
+  text-align: center;
+}
+
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.card {
+  width: 22%; 
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  padding-bottom: 15px;
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.card-container a {
+  text-decoration: none;
+  color: black;
+}
+
+.card-img-container {
+  text-align: center;
+
+}
+
+.card-img-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.card-title a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.card-title a:hover {
+  color: #64613e;
+}
+
+.card-content p {
+  margin: 0;
+}
+
+.like {
+  display: flex;
+  align-items: center;
+}
+
+.like img {
+  margin-right: 5px;
+}
+
+#likeButton {
+  cursor: pointer;
+  transition: transform 0.2s; 
+  width: 15px;
+  height: 15px;
+  margin-left: 20px;
+}
+
+
+#likeButton:hover {
+  transform: scale(1.1); 
 }

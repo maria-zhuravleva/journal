@@ -7,16 +7,17 @@
   type="text/css"
   href="{% static 'css/articles/article-index.css' %}"
 />
+<script defer src="{% static 'js/article-detail.js' %}"></script>
 {% endblock %}
 
 {% block content %}
 
+{% comment %} <img src="{% static 'images/cool-cat.svg' %}" alt="A cool cat" />
+<img src="{% static 'images/happy-cat.svg' %}" alt="A happy cat" />
+<img src="{% static 'images/teacup-cat.svg' %}" alt="A cat in a teacup" />
+<img src="{% static 'images/cat-in-box.svg' %}" alt="A cat in a box" /> {% endcomment %}
 <section class="page-header">
   <h1>Article List</h1>
-  {% comment %} <img src="{% static 'images/cool-cat.svg' %}" alt="A cool cat" />
-  <img src="{% static 'images/happy-cat.svg' %}" alt="A happy cat" />
-  <img src="{% static 'images/teacup-cat.svg' %}" alt="A cat in a teacup" />
-  <img src="{% static 'images/cat-in-box.svg' %}" alt="A cat in a box" /> {% endcomment %}
 </section>
 
 <section class="card-container">
@@ -30,10 +31,18 @@
               alt="A card logo"
             >
           </div>
-          <h2 class="card-title">{{ article.name }}</h2>
-          <p><small>{{ article.description }}</small></p>
+          <h2 class="card-title">{{ article.title }}</h2>
+          <p><small>{{ article.main_content}}</small></p>
+          <hr />
+          <p>Read Article</p>
         </div>
       </a>
+      {% if user.is_authenticated %}
+        <div class="like btn">
+          <img id="likeButton" src="{% static 'images/like.png' %}" alt="like">
+          <span id="likeCount">{{ article.likes }}</span>
+        </div>
+      {% endif %} 
     </div>
   {% endfor %}
 </section>

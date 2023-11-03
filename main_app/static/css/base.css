@@ -9,10 +9,10 @@
 
 body {
   /* background-color: rgb(239, 235, 224); */
-  /* background-color: #f5f0ea; */
+  background-color: #f5f0ea;
   font-family: 'Colgent', sans-serif; 
   /* font-family: 'FONTSPRING DEMO - The Seasons Light', sans-serif;  */
-  background-color: #f0e8dd;
+  /* background-color: #f0e8dd; */
 }
 
 p#main-heading {
