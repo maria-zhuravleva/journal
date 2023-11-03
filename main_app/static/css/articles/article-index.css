@@ -115,14 +115,24 @@ hr {
   height: 1px; 
   background-color: black;
   border: none;
-  margin-bottom: 10px;
+  width: 90%;
+  margin-top: 40px; 
 }
 
-.created span {
-  border-right: solid 1px black;
+.created {
+  color: #ccc;
+  font-size: 13px;
+  width: 50px;
+  border-right: solid 1px #ccc;
+}
+
+.read-p {
+  cursor: pointer;
 }
 
 
-/* #likeButton:hover {
-  transform: scale(1.1); 
-} */
+.read-p:hover {
+  border-bottom: solid 1px #64613e;
+  color: #64613e;
+  width: 85px;
+} 

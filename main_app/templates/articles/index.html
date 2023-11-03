@@ -31,24 +31,24 @@
             >
           </div>
           <h2 class="card-title">{{ article.title }}</h2>
-          <p><small> <span clas="created">Created at </span> {{ article.created_at|date:"F d, Y" }}</small></p>
+          <p class="created"><small>{{ article.created_at|date:"m.d.Y" }}</small></p>
           <p><small>{{ article.main_content}}</small></p>
-          <hr />
-          <p>Read Article</p>
+          <p class="read-p">Read Article</p>
         </div>
       </a>
       {% if user.is_authenticated %}
-        {% csrf_token %}
-        <div class="like btn">
-          <img
-            id="likeButton"
-            src="{% static 'images/liked.png' %}"
-            alt="like"
-            data-article-id="{{ article.id }}"
-          >
-          <span id="likeCount">{{ article.likes }}</span>
-        </div>           
+      {% csrf_token %}
+      <div class="like btn">
+        <img
+        id="likeButton"
+        src="{% static 'images/liked.png' %}"
+        alt="like"
+        data-article-id="{{ article.id }}"
+        >
+        <span id="likeCount">{{ article.likes }}</span>
+      </div>           
       {% endif %} 
+      <hr />
     </div>
   {% endfor %}
 </section>
