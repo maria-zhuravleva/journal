@@ -48,10 +48,10 @@
   width: 22%; 
   min-height: 300px; 
   margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
+  /* border: 1px solid #ccc; */
+  /* border-radius: 8px; */
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+  /* background-color: #fff; */
   padding-bottom: 15px;
 }
 
@@ -120,7 +120,7 @@ hr {
 }
 
 .created {
-  color: #ccc;
+  color: rgba(0, 0, 0, 0.5);
   font-size: 13px;
   width: 50px;
   border-right: solid 1px #ccc;
@@ -128,6 +128,7 @@ hr {
 
 .read-p {
   cursor: pointer;
+  padding-top: 20px;
 }
 
 

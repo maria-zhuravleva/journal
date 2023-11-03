@@ -13,32 +13,44 @@
 {% block content %}
 
 <section class="article-container">
-  <div class="article-img">
-    <img 
-      src="{% static 'images/header-logo.png' %}" 
-      alt="A logo"
-    >
-  </div>
   <div class="article-details">
     <div class="article-title">
       <h1>{{ article.title }}</h1>
+      <hr />
+    </div>
+    <div class="date">
+      <p class="created"><small>{{ article.created_at|date:"m.d.Y" }}</small></p>
     </div>
     <div class="content-main">
       <p>{{ article.content_main }}</p>
     </div>
-    <div class="photo-section1">
-      {% comment %} photo {% endcomment %}
-    </div>
-    <div class="content-section1-container">
+    <div class="media-container">
+
+      <div class="photo-section1">
+        <img 
+          class="img1"
+          src="{% static 'images/1.jpeg' %}" 
+          alt="A card logo"
+        >
+        <img 
+          class="img2"
+          src="{% static 'images/2.jpeg' %}" 
+          alt="A card logo"
+        >
+      </div>
       <div class="content-section1">
-        <p></p>
+        <p>{{ article.content_section_1 }}</p>
       </div>
       <div class="photo-section2">
-        {% comment %} photo {% endcomment %}
+        <img 
+        class="img2"
+        src="{% static 'images/3.jpeg' %}" 
+        alt="A card logo"
+        >
       </div>
-    </div>
-    <div class="content-section2">
-      <p></p>
+      <div class="content-section2">
+        <p>{{ article.content_section_2 }}</p>
+      </div>
     </div>
     {% if user.is_authenticated %}
       <div class="like btn">
@@ -57,7 +69,8 @@
         <a href="{% url 'article-update' article.id %}" class="btn warn">Edit</a>
         <a href="{% url 'article-delete' article.id %}" class="btn danger">Delete</a>
       {% endif %}
-    </div>    
+    </div> 
+    <hr class="line" />   
   </div>
 </section>
 
