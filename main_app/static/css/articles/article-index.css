@@ -29,6 +29,12 @@
 
 .page-header {
   text-align: center;
+  margin-top: 0;
+}
+
+.page-header p {
+  font-size: 65px;
+  margin-top: 0;
 }
 
 
@@ -40,6 +46,7 @@
 
 .card {
   width: 22%; 
+  min-height: 300px; 
   margin-bottom: 20px;
   border: 1px solid #ccc;
   border-radius: 8px;
@@ -102,6 +109,17 @@
   width: 15px;
   height: 15px;
   margin-left: 20px;
+}
+
+hr {
+  height: 1px; 
+  background-color: black;
+  border: none;
+  margin-bottom: 10px;
+}
+
+.created span {
+  border-right: solid 1px black;
 }
 
 
