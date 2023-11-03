@@ -7,7 +7,6 @@
   type="text/css"
   href="{% static 'css/articles/article-index.css' %}"
 />
-<script defer src="{% static 'js/article-detail.js' %}"></script>
 {% endblock %}
 
 {% block content %}
@@ -38,10 +37,16 @@
         </div>
       </a>
       {% if user.is_authenticated %}
+        {% csrf_token %}
         <div class="like btn">
-          <img id="likeButton" src="{% static 'images/like.png' %}" alt="like">
+          <img
+            id="likeButton"
+            src="{% static 'images/liked.png' %}"
+            alt="like"
+            data-article-id="{{ article.id }}"
+          >
           <span id="likeCount">{{ article.likes }}</span>
-        </div>
+        </div>           
       {% endif %} 
     </div>
   {% endfor %}

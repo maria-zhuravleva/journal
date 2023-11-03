@@ -97,14 +97,14 @@
 }
 
 #likeButton {
-  cursor: pointer;
-  transition: transform 0.2s; 
+  /* cursor: pointer;
+  transition: transform 0.2s;  */
   width: 15px;
   height: 15px;
   margin-left: 20px;
 }
 
 
-#likeButton:hover {
+/* #likeButton:hover {
   transform: scale(1.1); 
-}
+} */

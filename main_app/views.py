@@ -1,4 +1,6 @@
 from django.shortcuts import render, redirect
+from django.http import JsonResponse
+import json
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth.views import LoginView
 from django.contrib.auth import login
@@ -47,6 +49,18 @@ class ArticleDelete(UserPassesTestMixin, DeleteView):
 
   def test_func(self):
     return self.request.user.is_superuser
+
+@login_required  
+def like_article(request, article_id):
+    article = Article.objects.get(id=article_id)
+    liked = json.loads(request.body).get('liked') 
+    if liked:
+      article.likes += 1
+    else:
+      article.likes -= 1
+    article.save()
+    return JsonResponse({'likes': article.likes})
+
 
 def signup(request):
   error_message = ''

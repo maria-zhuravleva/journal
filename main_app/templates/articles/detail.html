@@ -42,9 +42,15 @@
     </div>
     {% if user.is_authenticated %}
       <div class="like btn">
-        <img id="likeButton" src="{% static 'images/like.png' %}" alt="like">
+        <img
+          id="likeButton"
+          src="{% if user.is_authenticated and article.likes > 0 %}{% static 'images/liked.png' %}{% else %}{% static 'images/like.png' %}{% endif %}"
+          alt="like"
+          data-article-id="{{ article.id }}"
+          class="{% if user.is_authenticated and article.likes > 0 %}liked{% endif %}"
+        >
         <span id="likeCount">{{ article.likes }}</span>
-      </div>
+      </div>       
     {% endif %}
     <div class="article-actions">
       {% if user.is_superuser %}
