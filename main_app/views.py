@@ -28,7 +28,7 @@ class ArticleCreate(UserPassesTestMixin, CreateView):
   fields = ['title', 'content_main', 'content_section_1', 'content_section_2']
 
   def form_valid(self, form):
-    form.instance.user = self.request.user 
+    form.instance.author = self.request.user   
     return super().form_valid(form)
   
   def test_func(self):
