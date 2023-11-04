@@ -9,10 +9,11 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import UserPassesTestMixin
 from .models import Article, Photo
+from .form import PhotoEditForm
 import uuid
 import boto3
 
-# Add these "constant" variables below the imports
+
 S3_BASE_URL = 'https://s3.us-east-2.amazonaws.com/'
 BUCKET = 'marias-the-journal-bucket'
 
@@ -28,9 +29,6 @@ def article_index(request):
   return render(request, 'articles/index.html', { 'articles': articles })
 
 @login_required
-# def article_detail(request, article_id):
-#   article = Article.objects.get(id=article_id)
-#   return render(request, 'articles/detail.html', { 'article': article })
 
 def article_detail(request, article_id):
   article = Article.objects.get(id=article_id)
@@ -94,26 +92,6 @@ def signup(request):
   return render(request, 'signup.html', context)
 
 
-# def add_photo(request, article_id):
-#   photos = request.FILES.getlist('photo-file') 
-  
-#   if photos:
-#     for photo_file in photos:
-#       s3 = boto3.client('s3')
-#       key = uuid.uuid4().hex + photo_file.name[photo_file.name.rfind('.'):]
-
-#       try:
-#         s3.upload_fileobj(photo_file, BUCKET, key)
-#         url = f"{S3_BASE_URL}{BUCKET}/{key}"
-#         photo = Photo(url=url, article_id=article_id)
-#         article_photo = Photo.objects.filter(article_id=article_id)
-#         photo.save()
-#         if article_photo.first():
-#           article_photo.first().delete()
-#         photo.save()
-#       except Exception as err:
-#         print('An error occurred uploading file to S3: %s' % err)
-#   return redirect('article-detail', article_id=article_id)
 
 def add_photo(request, article_id):
     photos = request.FILES.getlist('photo-file') 
@@ -146,6 +124,32 @@ def add_photo(request, article_id):
 
 
 
+# def article_detail(request, article_id):
+#   article = Article.objects.get(id=article_id)
+#   return render(request, 'articles/detail.html', { 'article': article })
+
+
+# def add_photo(request, article_id):
+#   photos = request.FILES.getlist('photo-file') 
+  
+#   if photos:
+#     for photo_file in photos:
+#       s3 = boto3.client('s3')
+#       key = uuid.uuid4().hex + photo_file.name[photo_file.name.rfind('.'):]
+
+#       try:
+#         s3.upload_fileobj(photo_file, BUCKET, key)
+#         url = f"{S3_BASE_URL}{BUCKET}/{key}"
+#         photo = Photo(url=url, article_id=article_id)
+#         article_photo = Photo.objects.filter(article_id=article_id)
+#         photo.save()
+#         if article_photo.first():
+#           article_photo.first().delete()
+#         photo.save()
+#       except Exception as err:
+#         print('An error occurred uploading file to S3: %s' % err)
+#   return redirect('article-detail', article_id=article_id)
+
 
 
 @require_http_methods(["POST", "DELETE"])
@@ -154,3 +158,18 @@ def delete_photo(request, photo_id):
   article_id = photo.article.id
   photo.delete()
   return redirect('article-detail', article_id=article_id)
+
+
+@require_http_methods(["GET", "POST"])
+def edit_photo(request, photo_id):
+  photo = get_object_or_404(Photo, id=photo_id)
+  form = PhotoEditForm(instance=photo)
+    
+  if request.method == "POST":
+    form = PhotoEditForm(request.POST, request.FILES, instance=photo)
+    if form.is_valid():
+      form.save()
+      return redirect('article-detail', article_id=photo.article.id)
+
+  return render(request, 'articles/edit_photo.html', {'photo': photo, 'form': form})
+

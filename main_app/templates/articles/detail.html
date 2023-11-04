@@ -25,38 +25,11 @@
       <p>{{ article.content_main }}</p>
     </div>
     <div class="media-container">
-
-      {% comment %} <div class="photo-section1">
-        {% for photo in article.photos.all %}
-          <img src="{{ photo.url }}" alt="A photo of {{ article.title }}" class="usr-img">
-          <form action="{% url 'delete-photo' photo.id %}" method="POST">
-            {% csrf_token %}
-            <button type="submit">Delete Photo</button>
-          </form>
-        {% endfor %}
-      </div> {% endcomment %}
-
-      {% comment %} <div class="photo-section1">
-        {% for photo in photo_section1 %}
-          <img src="{{ photo.url }}" alt="A photo of {{ article.title }}" class="usr-img">
-          <form action="{% url 'delete-photo' photo.id %}" method="POST">
-            {% csrf_token %}
-            <img 
-              class="photo-menu"
-              id="photoMenu"
-              src="{% static 'images/photo-menu.png' %}" 
-              alt="A card logo"
-            >
-            <button type="submit" id="deleteButton">delete</button>
-          </form>
-        {% endfor %}
-      </div> {% endcomment %}
-
       <div class="photo-section1">
         {% for photo in photo_section1 %}
           <div class="photo-container">
             <img src="{{ photo.url }}" alt="A photo of {{ article.title }}" class="article-img">
-            <div class="photo-menu">
+            <div class="photo-menu photoMenu">
               <img 
                 class="photo-menu-icon"
                 src="{% static 'images/photo-menu.png' %}" 
@@ -65,9 +38,15 @@
               <div class="dropdown-content">
                 <form action="{% url 'delete-photo' photo.id %}" method="POST">
                   {% csrf_token %}
-                  <button type="submit" class="delete-button">delete</button>
+                  <button type="submit" class="delete-button deleteButton">delete</button>
                 </form>
-                <!-- Add more options here (e.g., Update Photo) -->
+                <form method="POST"
+                  enctype="multipart/form-data"
+                >
+                  {% csrf_token %}
+                  {{ form.as_p }}
+                  <button type="submit">edit</button>
+                </form>            
               </div>
             </div>
           </div>
@@ -76,18 +55,11 @@
       <div class="content-section1">
         <p>{{ article.content_section_1 }}</p>
       </div>
-      {% comment %} <div class="photo-section2">
-        <img 
-        class="img2"
-        src="{% static 'images/3.jpeg' %}" 
-        alt="A card logo"
-        >
-      </div> {% endcomment %}
       <div class="photo-section2">
         {% for photo in photo_section2 %}
           <div class="photo-container">
-            <img src="{{ photo.url }}" alt="A photo of {{ article.title }}" class="usr-img">
-            <div class="photo-menu">
+            <img src="{{ photo.url }}" alt="A photo of {{ article.title }}" class="article-img">
+            <div class="photo-menu photoMenu">
               <img 
                 class="photo-menu-icon"
                 src="{% static 'images/photo-menu.png' %}" 
@@ -96,28 +68,23 @@
               <div class="dropdown-content">
                 <form action="{% url 'delete-photo' photo.id %}" method="POST">
                   {% csrf_token %}
-                  <button type="submit" class="delete-button">delete</button>
+                  <button type="submit" class="delete-button deleteButton">delete</button>
                 </form>
-                <!-- Add more options here (e.g., Update Photo) -->
+                <form method="POST">
+                  {% csrf_token %}
+                  {{ form.as_p }}
+                  <button type="submit">edit</button>
+                </form>              
               </div>
             </div>
           </div>
         {% endfor %}
-        {% comment %} {% for photo in photo_section2 %}
-          <img src="{{ photo.url }}" alt="A photo of {{ article.title }}" class="usr-img">
-          <form action="{% url 'delete-photo' photo.id %}" method="POST">
-            {% csrf_token %}
-            <img 
-              class="photo-menu"
-              src="{% static 'images/photo-menu.png' %}" 
-              alt="A card logo"
-            >
-            <button type="submit">delete</button>
-          </form>
-        {% endfor %} {% endcomment %}
       </div>
       <div class="content-section2">
         <p>{{ article.content_section_2 }}</p>
+      </div>
+      <div class="photo-section3">
+        {% comment %} add thirds section for pics courousel {% endcomment %}
       </div>
     </div>
     {% if user.is_authenticated %}
@@ -136,23 +103,23 @@
       {% if user.is_superuser %}
         <a href="{% url 'article-update' article.id %}" class="btn warn">Edit</a>
         <a href="{% url 'article-delete' article.id %}" class="btn danger">Delete</a>
+        <h3>Upload Photo</h3>
+        <p id="file-name"></p>
+        <form 
+          action="{% url 'add-photo' article.id %}"
+          enctype="multipart/form-data"
+          method="POST"
+        >
+          {% csrf_token %}
+          <label class="btn secondary">
+            Choose photo
+            <input type="file" name="photo-file" id="file-input">
+          </label>
+          <button type="submit" class="btn submit">Upload Photo</button>
+        </form>
       {% endif %}
     </div> 
 
-    <h3>Change Photo</h3>
-    <p id="file-name"></p>
-    <form 
-      action="{% url 'add-photo' article.id %}"
-      enctype="multipart/form-data"
-      method="POST"
-    >
-      {% csrf_token %}
-      <label class="btn secondary">
-        Choose photo
-        <input type="file" name="photo-file" id="file-input">
-      </label>
-      <button type="submit" class="btn submit">Upload Photo</button>
-    </form>
 
     <hr class="line" />   
   </div>

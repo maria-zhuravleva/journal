@@ -110,14 +110,14 @@
   position: relative;
 }
 
-/* .photo-menu {
-  width:50px;
-  height: 3px;
-  } */
 
 .photo-menu img {
   width:20px;
   height: 5px;
+}
+
+.photo-menu img:hover {
+  cursor: pointer;
 }
 
 .photo-menu .dropdown-content {

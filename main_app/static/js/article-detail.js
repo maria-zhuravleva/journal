@@ -49,12 +49,14 @@ fileInput.addEventListener('change', evt => {
 
 
 document.addEventListener('DOMContentLoaded', function() {
-  const photoMenu = document.getElementById('photoMenu')
-  const deleteButton = document.getElementById('deleteButton')
+  const photoMenu = document.querySelectorAll('.photoMenu')
+  const deleteButton = document.querySelectorAll('.deleteButton')
 
-  photoMenu.addEventListener('click', function() {
-    deleteButton.style.display = (deleteButton.style.display === 'none') ? 'block' : 'none'
-  })
+  for (let i = 0; i < photoMenu.length; i++) {
+    photoMenu[i].addEventListener('click', function() {
+      deleteButton[i].style.display = (deleteButton[i].style.display === 'none') ? 'block' : 'none';
+    })
+  }
 })
 
 
