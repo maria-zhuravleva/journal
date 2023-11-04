@@ -13,4 +13,5 @@ urlpatterns = [
   path('articles/<int:pk>/delete/', views.ArticleDelete.as_view(), name='article-delete'),
   path('accounts/signup/', views.signup, name='signup'),
   path('accounts/login/', LoginView.as_view(template_name='login.html'), name='login'),
+  path('articles/<int:article_id>/add-photo/', views.add_photo, name='add-photo'),
 ]
