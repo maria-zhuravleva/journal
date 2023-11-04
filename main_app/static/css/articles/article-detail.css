@@ -98,3 +98,37 @@
 .line {
   margin-top: 20px;
 }
+
+.photo-menu {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  .photo-menu .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    padding: 8px;
+    border-radius: 4px;
+    transition: opacity 0.3s ease;
+  }
+
+  .photo-menu:hover .dropdown-content {
+    display: block;
+    opacity: 1;
+  }
+
+  .photo-menu-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .delete-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
