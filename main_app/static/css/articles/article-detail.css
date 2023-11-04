@@ -36,19 +36,24 @@
   width: 100%;
 }
 
+/* img.article-img {
+  width: 650px;
+  height: 700px;
+} */
+
 .photo-section1,
 .photo-section2 {
   display: flex;
   justify-content: space-between;
 }
 
-.photo-section1 img {
-  width: 48%; 
+.photo-section1 .article-img {
+  width: 83%;  
+  height: 100%;
 }
 
 .photo-section2 img {
   width: 80%;
-  padding-left: 10%;
 }
 
 .content-section1 {
@@ -98,37 +103,43 @@
 .line {
   margin-top: 20px;
 }
+.photo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
 
-.photo-menu {
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
+/* .photo-menu {
+  width:50px;
+  height: 3px;
+  } */
+
+.photo-menu img {
+  width:20px;
+  height: 5px;
+}
+
+.photo-menu .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  padding: 8px;
+  border-radius: 4px;
+  transition: opacity 0.3s ease;
   }
 
-  .photo-menu .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    padding: 8px;
-    border-radius: 4px;
-    transition: opacity 0.3s ease;
+.photo-menu:hover .dropdown-content {
+  display: block;
+  opacity: 1;
   }
 
-  .photo-menu:hover .dropdown-content {
-    display: block;
-    opacity: 1;
-  }
 
-  .photo-menu-icon {
-    width: 20px;
-    height: 20px;
-  }
-
-  .delete-button {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
+.delete-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
   }

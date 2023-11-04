@@ -48,5 +48,17 @@ fileInput.addEventListener('change', evt => {
 
 
 
+document.addEventListener('DOMContentLoaded', function() {
+  const photoMenu = document.getElementById('photoMenu')
+  const deleteButton = document.getElementById('deleteButton')
+
+  photoMenu.addEventListener('click', function() {
+    deleteButton.style.display = (deleteButton.style.display === 'none') ? 'block' : 'none'
+  })
+})
+
+
+
+
 
 
