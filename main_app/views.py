@@ -1,6 +1,7 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import JsonResponse
 import json
+from django.views.decorators.http import require_http_methods
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth.views import LoginView
 from django.contrib.auth import login
@@ -118,3 +119,10 @@ def add_photo(request, article_id):
   #     photo.save()
   #   except Exception as err:
   #     print('An error occurred uploading file to S3: %s' % err)
+
+@require_http_methods(["DELETE"])
+def delete_photo(request, photo_id):
+  photo = get_object_or_404(Photo, id=photo_id)
+  article_id = photo.article.id
+  photo.delete()
+  return redirect('article-detail', article_id=article_id)
