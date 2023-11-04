@@ -28,9 +28,19 @@ def article_index(request):
   return render(request, 'articles/index.html', { 'articles': articles })
 
 @login_required
+# def article_detail(request, article_id):
+#   article = Article.objects.get(id=article_id)
+#   return render(request, 'articles/detail.html', { 'article': article })
+
 def article_detail(request, article_id):
   article = Article.objects.get(id=article_id)
-  return render(request, 'articles/detail.html', { 'article': article })
+  context = {
+    'article': article,
+    'photo_section1': Photo.objects.filter(article=article)[:2],
+    'photo_section2': Photo.objects.filter(article=article)[2:],
+  }
+  return render(request, 'articles/detail.html', context)
+
 
 class ArticleCreate(UserPassesTestMixin, CreateView):
   model = Article
@@ -84,43 +94,61 @@ def signup(request):
   return render(request, 'signup.html', context)
 
 
-def add_photo(request, article_id):
-  photos = request.FILES.getlist('photo-file') 
+# def add_photo(request, article_id):
+#   photos = request.FILES.getlist('photo-file') 
   
-  if photos:
-    for photo_file in photos:
-      s3 = boto3.client('s3')
-      key = uuid.uuid4().hex + photo_file.name[photo_file.name.rfind('.'):]
+#   if photos:
+#     for photo_file in photos:
+#       s3 = boto3.client('s3')
+#       key = uuid.uuid4().hex + photo_file.name[photo_file.name.rfind('.'):]
 
-      try:
-        s3.upload_fileobj(photo_file, BUCKET, key)
-        url = f"{S3_BASE_URL}{BUCKET}/{key}"
-        photo = Photo(url=url, article_id=article_id)
-        article_photo = Photo.objects.filter(article_id=article_id)
-        photo.save()
-        # if article_photo.first():
-        #   article_photo.first().delete()
-        # photo.save()
-      except Exception as err:
-        print('An error occurred uploading file to S3: %s' % err)
-  return redirect('article-detail', article_id=article_id)
-  # photo_file = request.FILES.get('photo-file', None)
-  # if photo_file:
-  #   s3 = boto3.client('s3')
-  #   key = uuid.uuid4().hex + photo_file.name[photo_file.name.rfind('.'):]
+#       try:
+#         s3.upload_fileobj(photo_file, BUCKET, key)
+#         url = f"{S3_BASE_URL}{BUCKET}/{key}"
+#         photo = Photo(url=url, article_id=article_id)
+#         article_photo = Photo.objects.filter(article_id=article_id)
+#         photo.save()
+#         if article_photo.first():
+#           article_photo.first().delete()
+#         photo.save()
+#       except Exception as err:
+#         print('An error occurred uploading file to S3: %s' % err)
+#   return redirect('article-detail', article_id=article_id)
 
-  #   try:
-  #     s3.upload_fileobj(photo_file, BUCKET, key)
-  #     url = f"{S3_BASE_URL}{BUCKET}/{key}"
-  #     photo = Photo(url=url, article_id=article_id)
-  #     article_photo = Photo.objects.filter(article_id=article_id)
-  #     if article_photo.first():
-  #       article_photo.first().delete()
-  #     photo.save()
-  #   except Exception as err:
-  #     print('An error occurred uploading file to S3: %s' % err)
+def add_photo(request, article_id):
+    photos = request.FILES.getlist('photo-file') 
+    photo_section1 = []
+    photo_section2 = []
 
-@require_http_methods(["DELETE"])
+    if photos:
+      for index, photo_file in enumerate(photos):
+        s3 = boto3.client('s3')
+        key = uuid.uuid4().hex + photo_file.name[photo_file.name.rfind('.'):]
+
+        try:
+          s3.upload_fileobj(photo_file, BUCKET, key)
+          url = f"{S3_BASE_URL}{BUCKET}/{key}"
+          photo = Photo(url=url, article_id=article_id)
+          photo.save()
+
+          if index < 2:
+            photo_section1.append(photo)
+          else:
+            photo_section2.append(photo)
+
+        except Exception as err:
+          print('An error occurred uploading file to S3: %s' % err)
+
+    print("photo_section1:", photo_section1)
+    print("photo_section2:", photo_section2)
+
+    return redirect('article-detail', article_id=article_id)
+
+
+
+
+
+@require_http_methods(["POST", "DELETE"])
 def delete_photo(request, photo_id):
   photo = get_object_or_404(Photo, id=photo_id)
   article_id = photo.article.id

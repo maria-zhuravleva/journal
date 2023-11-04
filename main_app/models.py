@@ -21,7 +21,6 @@ class Article(models.Model):
 class Photo(models.Model):
   url = models.CharField(max_length=250)
   article = models.ForeignKey(Article, related_name='photos', on_delete=models.CASCADE)
-  # article = models.OneToOneField(Article, on_delete=models.CASCADE)
 
   def __str__(self):
     return f"Photo for article_id: {self.article_id} @{self.url}"

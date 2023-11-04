@@ -26,39 +26,42 @@
     </div>
     <div class="media-container">
 
-      <div class="photo-section1">
+      {% comment %} <div class="photo-section1">
         {% for photo in article.photos.all %}
           <img src="{{ photo.url }}" alt="A photo of {{ article.title }}" class="usr-img">
+          <form action="{% url 'delete-photo' photo.id %}" method="POST">
+            {% csrf_token %}
+            <button type="submit">Delete Photo</button>
+          </form>
         {% endfor %}
-
-        {% comment %} {% if article.photos.all %}
-          <img 
-            src="{{article.photo.url}}" 
-            alt="A photo of {{article.title}}"
-            class="usr-img"
-          >
-        {% else %}
-        <img 
-          class="img1"
-          src="{% static 'images/1.jpeg' %}" 
-          alt="A card logo"
-        >
-        {% endif %} {% endcomment %}
-        {% comment %} <img 
-          class="img2"
-          src="{% static 'images/2.jpeg' %}" 
-          alt="A card logo"
-        > {% endcomment %}
+      </div> {% endcomment %}
+      <div class="photo-section1">
+        {% for photo in photo_section1 %}
+          <img src="{{ photo.url }}" alt="A photo of {{ article.title }}" class="usr-img">
+          <form action="{% url 'delete-photo' photo.id %}" method="POST">
+            {% csrf_token %}
+            <button type="submit">Delete Photo</button>
+          </form>
+        {% endfor %}
       </div>
       <div class="content-section1">
         <p>{{ article.content_section_1 }}</p>
       </div>
-      <div class="photo-section2">
+      {% comment %} <div class="photo-section2">
         <img 
         class="img2"
         src="{% static 'images/3.jpeg' %}" 
         alt="A card logo"
         >
+      </div> {% endcomment %}
+      <div class="photo-section2">
+        {% for photo in photo_section2 %}
+          <img src="{{ photo.url }}" alt="A photo of {{ article.title }}" class="usr-img">
+          <form action="{% url 'delete-photo' photo.id %}" method="POST">
+            {% csrf_token %}
+            <button type="submit">Delete Photo</button>
+          </form>
+        {% endfor %}
       </div>
       <div class="content-section2">
         <p>{{ article.content_section_2 }}</p>
