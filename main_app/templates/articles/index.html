@@ -25,10 +25,18 @@
       <a href="{% url 'article-detail' article.id %}">
         <div class="card-content">
           <div class="card-img-container">
-            <img 
-              src="{% static 'images/cover.jpeg' %}" 
-              alt="A card logo"
-            >
+            {% if article.photo.url %}
+              <img 
+                src="{{article.photo.url}}" 
+                alt="An article photo"
+                class="usr-img"
+              >
+            {% else %}
+              <img 
+                src="{% static 'images/cover.jpeg' %}" 
+                alt="A card pic"
+              >
+            {% endif %}
           </div>
           <h2 class="card-title">{{ article.title }}</h2>
           <p class="created"><small>{{ article.created_at|date:"m.d.Y" }}</small></p>
