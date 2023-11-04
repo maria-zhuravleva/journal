@@ -27,7 +27,11 @@
     <div class="media-container">
 
       <div class="photo-section1">
-        {% if article.photo.url %}
+        {% for photo in article.photos.all %}
+          <img src="{{ photo.url }}" alt="A photo of {{ article.title }}" class="usr-img">
+        {% endfor %}
+
+        {% comment %} {% if article.photos.all %}
           <img 
             src="{{article.photo.url}}" 
             alt="A photo of {{article.title}}"
@@ -39,7 +43,7 @@
           src="{% static 'images/1.jpeg' %}" 
           alt="A card logo"
         >
-        {% endif %}
+        {% endif %} {% endcomment %}
         {% comment %} <img 
           class="img2"
           src="{% static 'images/2.jpeg' %}" 
