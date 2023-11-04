@@ -27,16 +27,24 @@
     <div class="media-container">
 
       <div class="photo-section1">
+        {% if cat.photo.url %}
+          <img 
+            src="{{article.photo.url}}" 
+            alt="A photo of {{article.title}}"
+            class="usr-img"
+          >
+        {% else %}
         <img 
           class="img1"
           src="{% static 'images/1.jpeg' %}" 
           alt="A card logo"
         >
-        <img 
+        {% endif %}
+        {% comment %} <img 
           class="img2"
           src="{% static 'images/2.jpeg' %}" 
           alt="A card logo"
-        >
+        > {% endcomment %}
       </div>
       <div class="content-section1">
         <p>{{ article.content_section_1 }}</p>
