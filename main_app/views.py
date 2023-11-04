@@ -7,7 +7,13 @@ from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import UserPassesTestMixin
-from .models import Article
+from .models import Article, Photo
+import uuid
+import boto3
+
+# Add these "constant" variables below the imports
+S3_BASE_URL = 'https://s3.us-east-2.amazonaws.com/'
+BUCKET = 'marias-the-journal-bucket'
 
 
 class Home(LoginView):
@@ -75,3 +81,22 @@ def signup(request):
   form = UserCreationForm()
   context = {'form': form, 'error_message': error_message}
   return render(request, 'signup.html', context)
+
+
+def add_photo(request, article_id):
+  photo_file = request.FILES.get('photo-file', None)
+  if photo_file:
+    s3 = boto3.client('s3')
+    key = uuid.uuid4().hex + photo_file.name[photo_file.name.rfind('.'):]
+
+    try:
+      s3.upload_fileobj(photo_file, BUCKET, key)
+      url = f"{S3_BASE_URL}{BUCKET}/{key}"
+      photo = Photo(url=url, article_id=article_id)
+      article_photo = Photo.objects.filter(article_id=article_id)
+      if article_photo.first():
+        article_photo.first().delete()
+      photo.save()
+    except Exception as err:
+      print('An error occurred uploading file to S3: %s' % err)
+  return redirect('article-detail', article_id=article_id)
