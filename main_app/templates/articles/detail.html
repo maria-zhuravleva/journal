@@ -78,6 +78,22 @@
         <a href="{% url 'article-delete' article.id %}" class="btn danger">Delete</a>
       {% endif %}
     </div> 
+
+    <h3>Change {{ article.title }}'s photo</h3>
+    <p id="file-name"></p>
+    <form 
+      action="{% url 'add-photo' article.id %}"
+      enctype="multipart/form-data"
+      method="POST"
+    >
+      {% csrf_token %}
+      <label class="btn secondary">
+        Choose photo
+        <input type="file" name="photo-file" id="file-input">
+      </label>
+      <button type="submit" class="btn submit">Upload Photo</button>
+    </form>
+
     <hr class="line" />   
   </div>
 </section>

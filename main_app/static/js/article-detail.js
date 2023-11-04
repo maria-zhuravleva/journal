@@ -1,23 +1,3 @@
-// document.addEventListener('DOMContentLoaded', function() {
-//   const likeButton = document.getElementById('likeButton')
-//   const likeCount = document.getElementById('likeCount')
-  
-//   if (likeButton) {
-//     likeButton.addEventListener('click', function() {
-//       let liked = likeButton.classList.contains('liked')
-//       if (liked) {
-//         likeButton.src = likeButton.src.replace('liked.png', 'like.png')
-//         likeButton.classList.remove('liked')
-//         likeCount.innerText = parseInt(likeCount.innerText) - 1
-//       } else {
-//         likeButton.src = likeButton.src.replace('like.png', 'liked.png')
-//         likeButton.classList.add('liked')
-//         likeCount.innerText = parseInt(likeCount.innerText) + 1
-//       }
-//     })
-//   }
-// })
-
 document.addEventListener('DOMContentLoaded', function() {
   const likeButton = document.getElementById('likeButton')
   const likeCount = document.getElementById('likeCount')
@@ -50,6 +30,19 @@ document.addEventListener('DOMContentLoaded', function() {
       })
       .catch(error => console.error('Error:', error))
     })
+  }
+})
+
+
+const fileInput = document.getElementById('file-input')
+const fileName = document.getElementById('file-name')
+
+fileInput.addEventListener('change', evt => {
+  const fileToUpload = evt.target.files[0].name
+  if(fileToUpload) {
+    fileName.innerText = fileToUpload
+  } else {
+    fileName.innerText = ""
   }
 })
 
