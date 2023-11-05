@@ -28,7 +28,7 @@
       <ul>
         {% if user.is_authenticated %}
           {% if user.is_superuser %}
-            <li><a href="{% url 'article-create' %}">Add an Article</a></li>
+            <li><a href="{% url 'article-create' %}">Create</a></li>
           {% endif %}
           <li><a href="{% url 'article-index' %}">Articles</a></li>
           <li><a href="{% url 'about' %}">About</a></li>
