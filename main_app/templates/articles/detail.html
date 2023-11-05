@@ -16,7 +16,6 @@
   <div class="article-details">
     <div class="article-title">
       <h1>{{ article.title }}</h1>
-      <hr />
     </div>
     <div class="date">
       <p class="created"><small>{{ article.created_at|date:"m.d.Y" }}</small></p>
@@ -98,21 +97,20 @@
       {% if user.is_superuser %}
         <a href="{% url 'article-update' article.id %}" class="btn warn">Edit</a>
         <a href="{% url 'article-delete' article.id %}" class="btn danger">Delete</a>
-        {% comment %} <h3>Upload Photo</h3> {% endcomment %}
-        <p id="file-name"></p>
         <form 
-          action="{% url 'add-photo' article.id %}"
-          enctype="multipart/form-data"
-          method="POST"
-          class="form-container"
+        action="{% url 'add-photo' article.id %}"
+        enctype="multipart/form-data"
+        method="POST"
+        class="form-container"
         >
-          {% csrf_token %}
-          <label class="btn secondary">
-            Choose Photo
-            <input type="file" name="photo-file" id="file-input">
-          </label>
-          <button type="submit" id="upload-photo" class="btn submit">Upload</button>
-        </form>
+        {% csrf_token %}
+        <button type="submit" id="upload-photo" class="btn submit">Upload</button>
+        <label class="btn secondary">
+          Choose Photo
+          <input type="file" name="photo-file" id="file-input">
+        </label>
+        <p id="file-name"></p>
+      </form>
       {% endif %}
     </div> 
 

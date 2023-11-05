@@ -9,6 +9,11 @@
   padding: 35px;
 }
 
+/* .article-title {
+  border-left: solid 1px black;
+  padding-left: 20px;
+} */
+
 .article-title h1 {
   font-size: 90px;
   text-transform: uppercase;
@@ -103,6 +108,7 @@
 .line {
   margin-top: 20px;
 }
+
 .photo-container {
   display: flex;
   flex-direction: column;
@@ -114,6 +120,7 @@
 .photo-menu img {
   width:20px;
   height: 5px;
+  padding: 10px 15px; 
 }
 
 .photo-menu img:hover {
@@ -123,25 +130,32 @@
 .photo-menu .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f9f9f9;
-  min-width: 80px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+  /* background-color: #f9f9f9; */
+  /* background-color: #b6a593; */
+  background-color: #392e26;
+  min-width: 50px;
+  box-shadow: 0px 28px 16px 0px rgba(0,0,0,0.1);
   z-index: 1;
   padding: 8px;
-  border-radius: 2px;
+  border-radius: 50%;
   transition: opacity 0.3s ease;
-  }
+}
+
+.photo-menu .delete-button {
+  display: none;
+}
 
 .photo-menu:hover .dropdown-content {
   display: block;
   opacity: 1;
-  }
+}
 
 
 .delete-button {
   background-color: transparent;
   border: none;
   cursor: pointer;
+  color: #fcf8f0;
   }
 
 #delete-photo {
@@ -150,21 +164,21 @@
 }
 
 #delete-photo:hover {
-  color: #64613e;
+  color: #e2d9cd;
 }
 
-  .form-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 160px;
-    margin-left: 0;
-    padding-left: 0;
-  }
-  
-  .form-container .btn {
-    margin-bottom: 10px;
-  }
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 160px;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.form-container .btn {
+  margin-bottom: 10px;
+}
 
 #file-input {
   color: #64613e;
@@ -180,7 +194,8 @@
   background-color: transparent;
   color: black;
   padding: 10px 20px;
-  border: solid 1px black;
+  border: solid 0.3px black;
+  border-radius: 50%;
 }
 
 .btn.secondary:hover {
@@ -192,7 +207,7 @@
   font-family: 'FONTSPRING DEMO - The Seasons Light', sans-serif; 
   border-top: 1px solid transparent;
   border-bottom: 1px solid transparent;
-  padding: 10px 5px;
+  margin-top: -4%;
   width: 80px;
   cursor: pointer;
   border-left: none; 
@@ -203,7 +218,7 @@
   text-transform: capitalize;
   border-radius: 0; 
   font-size: 15px;
-  font-weight: 100;
+  font-weight: 900;
 }
 
 #upload-photo:hover {

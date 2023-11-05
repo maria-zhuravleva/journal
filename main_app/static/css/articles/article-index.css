@@ -111,7 +111,7 @@
   margin-left: 20px;
 }
 
-hr {
+hr.index-line {
   height: 1px; 
   background-color: black;
   border: none;

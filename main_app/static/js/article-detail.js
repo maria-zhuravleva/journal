@@ -50,14 +50,20 @@ fileInput.addEventListener('change', evt => {
 
 document.addEventListener('DOMContentLoaded', function() {
   const photoMenu = document.querySelectorAll('.photoMenu')
-  const deleteButton = document.querySelectorAll('.deleteButton')
 
   for (let i = 0; i < photoMenu.length; i++) {
-    photoMenu[i].addEventListener('click', function() {
-      deleteButton[i].style.display = (deleteButton[i].style.display === 'none') ? 'block' : 'none';
+    photoMenu[i].addEventListener('mouseenter', function() {
+      const deleteButton = this.querySelector('.deleteButton')
+      deleteButton.style.display = 'block'
+    })
+
+    photoMenu[i].addEventListener('mouseleave', function() {
+      const deleteButton = this.querySelector('.deleteButton')
+      deleteButton.style.display = 'none'
     })
   }
 })
+
 
 
 
