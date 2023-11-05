@@ -71,6 +71,7 @@ nav ul {
 
 nav li {
   padding: 5px 8px;
+  margin: 0 8px; 
 }
 
 img#user-icon {
