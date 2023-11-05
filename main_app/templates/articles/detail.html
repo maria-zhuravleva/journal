@@ -38,15 +38,13 @@
               <div class="dropdown-content">
                 <form action="{% url 'delete-photo' photo.id %}" method="POST">
                   {% csrf_token %}
-                  <button type="submit" class="delete-button deleteButton">delete</button>
+                  <button type="submit" id="delete-photo" class="delete-button deleteButton">delete</button>
                 </form>
-                <form method="POST"
-                  enctype="multipart/form-data"
-                >
+                {% comment %} <form action="{% url 'edit-photo' photo.id %}" method="POST" enctype="multipart/form-data">
                   {% csrf_token %}
                   {{ form.as_p }}
                   <button type="submit">edit</button>
-                </form>            
+                </form>               {% endcomment %}
               </div>
             </div>
           </div>
@@ -68,13 +66,13 @@
               <div class="dropdown-content">
                 <form action="{% url 'delete-photo' photo.id %}" method="POST">
                   {% csrf_token %}
-                  <button type="submit" class="delete-button deleteButton">delete</button>
+                  <button type="submit" id="delete-photo" class="delete-button deleteButton">delete</button>
                 </form>
-                <form method="POST">
+                {% comment %} <form action="{% url 'edit-photo' photo.id %}" method="POST" enctype="multipart/form-data">
                   {% csrf_token %}
                   {{ form.as_p }}
                   <button type="submit">edit</button>
-                </form>              
+                </form>                 {% endcomment %}
               </div>
             </div>
           </div>
@@ -82,9 +80,6 @@
       </div>
       <div class="content-section2">
         <p>{{ article.content_section_2 }}</p>
-      </div>
-      <div class="photo-section3">
-        {% comment %} add thirds section for pics courousel {% endcomment %}
       </div>
     </div>
     {% if user.is_authenticated %}
@@ -103,19 +98,20 @@
       {% if user.is_superuser %}
         <a href="{% url 'article-update' article.id %}" class="btn warn">Edit</a>
         <a href="{% url 'article-delete' article.id %}" class="btn danger">Delete</a>
-        <h3>Upload Photo</h3>
+        {% comment %} <h3>Upload Photo</h3> {% endcomment %}
         <p id="file-name"></p>
         <form 
           action="{% url 'add-photo' article.id %}"
           enctype="multipart/form-data"
           method="POST"
+          class="form-container"
         >
           {% csrf_token %}
           <label class="btn secondary">
-            Choose photo
+            Choose Photo
             <input type="file" name="photo-file" id="file-input">
           </label>
-          <button type="submit" class="btn submit">Upload Photo</button>
+          <button type="submit" id="upload-photo" class="btn submit">Upload</button>
         </form>
       {% endif %}
     </div> 

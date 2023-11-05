@@ -89,7 +89,7 @@
 .article-actions a {
   text-decoration: none;
   color: black;
-  text-transform: lowercase;
+  text-transform: capitalize;
 }
 
 .article-actions a:hover {
@@ -124,11 +124,11 @@
   display: none;
   position: absolute;
   background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  min-width: 80px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
   z-index: 1;
   padding: 8px;
-  border-radius: 4px;
+  border-radius: 2px;
   transition: opacity 0.3s ease;
   }
 
@@ -143,3 +143,74 @@
   border: none;
   cursor: pointer;
   }
+
+#delete-photo {
+  font-family: 'FONTSPRING DEMO - The Seasons Light', sans-serif; 
+  text-transform: capitalize;
+}
+
+#delete-photo:hover {
+  color: #64613e;
+}
+
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 160px;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  
+  .form-container .btn {
+    margin-bottom: 10px;
+  }
+
+#file-input {
+  color: #64613e;
+  font-family: 'FONTSPRING DEMO - The Seasons Light', sans-serif; 
+  font-style: italic;
+  font-size: 13px;
+  font-weight: 100;
+  display: none;
+}
+
+.btn.secondary {
+  cursor: pointer;
+  background-color: transparent;
+  color: black;
+  padding: 10px 20px;
+  border: solid 1px black;
+}
+
+.btn.secondary:hover {
+  background-color: black;
+  color: white;
+}
+  
+#upload-photo {
+  font-family: 'FONTSPRING DEMO - The Seasons Light', sans-serif; 
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  padding: 10px 5px;
+  width: 80px;
+  cursor: pointer;
+  border-left: none; 
+  border-right: none;
+  height: 35px;
+  outline: none;
+  background: transparent;
+  text-transform: capitalize;
+  border-radius: 0; 
+  font-size: 15px;
+  font-weight: 100;
+}
+
+#upload-photo:hover {
+  /* border-bottom: 1px solid black; */
+  color:#64613e;
+}
+
+#file-name {
+  font-size: 13px;
+}

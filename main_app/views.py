@@ -9,7 +9,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import UserPassesTestMixin
 from .models import Article, Photo
-from .form import PhotoEditForm
+# from .forms import PhotoEditForm
 import uuid
 import boto3
 
@@ -116,39 +116,9 @@ def add_photo(request, article_id):
 
         except Exception as err:
           print('An error occurred uploading file to S3: %s' % err)
-
-    print("photo_section1:", photo_section1)
-    print("photo_section2:", photo_section2)
-
+          
     return redirect('article-detail', article_id=article_id)
 
-
-
-# def article_detail(request, article_id):
-#   article = Article.objects.get(id=article_id)
-#   return render(request, 'articles/detail.html', { 'article': article })
-
-
-# def add_photo(request, article_id):
-#   photos = request.FILES.getlist('photo-file') 
-  
-#   if photos:
-#     for photo_file in photos:
-#       s3 = boto3.client('s3')
-#       key = uuid.uuid4().hex + photo_file.name[photo_file.name.rfind('.'):]
-
-#       try:
-#         s3.upload_fileobj(photo_file, BUCKET, key)
-#         url = f"{S3_BASE_URL}{BUCKET}/{key}"
-#         photo = Photo(url=url, article_id=article_id)
-#         article_photo = Photo.objects.filter(article_id=article_id)
-#         photo.save()
-#         if article_photo.first():
-#           article_photo.first().delete()
-#         photo.save()
-#       except Exception as err:
-#         print('An error occurred uploading file to S3: %s' % err)
-#   return redirect('article-detail', article_id=article_id)
 
 
 
@@ -160,16 +130,21 @@ def delete_photo(request, photo_id):
   return redirect('article-detail', article_id=article_id)
 
 
-@require_http_methods(["GET", "POST"])
-def edit_photo(request, photo_id):
-  photo = get_object_or_404(Photo, id=photo_id)
-  form = PhotoEditForm(instance=photo)
-    
-  if request.method == "POST":
-    form = PhotoEditForm(request.POST, request.FILES, instance=photo)
-    if form.is_valid():
-      form.save()
-      return redirect('article-detail', article_id=photo.article.id)
+# @require_http_methods(["GET", "POST"])
+# def edit_photo(request, photo_id):
+#   photo = get_object_or_404(Photo, id=photo_id)
+#   form = PhotoEditForm(request.POST or None, request.FILES or None, instance=photo)
+      
+#   if request.method == "POST":
+#     form = PhotoEditForm(request.POST, request.FILES, instance=photo)
+#     if form.is_valid():
+#       new_photo = form.cleaned_data.get('new_photo')
+#       if new_photo:  
+#         photo.url = new_photo.url 
+#         photo.new_photo = new_photo 
+#       photo.save() 
+#       return redirect('article-detail', article_id=photo.article.id)
 
-  return render(request, 'articles/edit_photo.html', {'photo': photo, 'form': form})
+#   return render(request, 'articles/edit_photo.html', {'photo': photo, 'form': form})
+
 
