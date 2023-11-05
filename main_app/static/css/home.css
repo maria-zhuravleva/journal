@@ -1,4 +1,13 @@
 #landingVideo {
-  width: 100%;
+  width: 90%;
   height: auto; 
+  object-fit: cover; 
+}
+
+.landingVideo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  overflow: hidden;
 }

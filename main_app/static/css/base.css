@@ -10,27 +10,8 @@
 body {
   background-color: #f5f0ea;
   font-family: 'Colgent', sans-serif; 
-  /* background-color: rgb(239, 235, 224); */
-  /* background-image: url('../images/grain.png'); */
-  /* background-repeat: no-repeat; */
-  /* background-size: cover; */
   /* font-family: 'FONTSPRING DEMO - The Seasons Light', sans-serif;  */
-  /* background-color: #f0e8dd; */
 }
-
-/* body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  background: 
-  url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><rect width="1" height="1" fill-opacity="0.02"/><rect width="1" height="1" fill-opacity="0.02"/><rect width="1" height="1" fill-opacity="0.02"/><rect width="1" height="1" fill-opacity="0.02"/><rect width="1" height="1" fill-opacity="0.02"/><rect width="1" height="1" fill-opacity="0.02"/><rect width="1" height="1" fill-opacity="0.02"/><rect width="1" height="1" fill-opacity="0.02"/><rect width="1" height="1" fill-opacity="0.02"/><rect width="1" height="1" fill-opacity="0.02"/><rect width="1" height="1" fill-opacity="0.02"/><rect width="1" height="1" fill-opacity="0.02"/><rect width="1" height="1" fill-opacity="0.02"/><rect width="1" height="1" fill-opacity="0.02"/><rect width="1" height="1" fill-opacity="0.02"/><rect width="1" height="1" fill-opacity="0.02"/><rect width="1" height="1" fill-opacity="0.02"/><rect width="1" height="1" fill-opacity="0.02"/><rect width="1" height="1" fill-opacity="0.02"/><rect width="1" height="1" fill-opacity="0.02"/></svg>');
-  opacity: 0.2;
-  z-index: -1;
-} */
 
 .circle{
   background-image: url(../images/circle.png);
@@ -99,7 +80,6 @@ img#user-icon {
 }
 
 hr.nav-line {
-  /* border-color: #64613e; */
   border-width: 0.1px; 
   width: 80%; 
 }

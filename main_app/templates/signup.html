@@ -8,17 +8,17 @@
 {% block content %}
 
 <div class="page-header">
-  <h1>Sign Up</h1>
+  <p id='signup'>Sign Up</p>
+  {% if error_message %}
+    <p class="red-text">{{ error_message }}</p>
+  {% endif %}
 </div>
-{% if error_message %}
-  <p class="red-text">{{ error_message }}</p>
-{% endif %}
-<form action="" method="post" class="form-container" autocomplete="off">
+<form action="" method="post" class="signupform-container" autocomplete="off">
   {% csrf_token %}
   <table>
     {{ form.as_table }}
   </table>
-  <button type="submit" class="btn submit">Sign Up</button>
+  <button type="submit" id='signup-button' class="btn submit">Sign Up</button>
 </form>
 
 {% endblock %}
