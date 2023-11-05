@@ -33,8 +33,9 @@
 }
 
 .page-header p {
-  font-size: 65px;
+  font-size: 60px;
   margin-top: 0;
+  margin-bottom: 0;
 }
 
 
@@ -116,7 +117,7 @@ hr.index-line {
   background-color: black;
   border: none;
   width: 90%;
-  margin-top: 40px; 
+  margin-top: 20px; 
 }
 
 .created {
