@@ -4,7 +4,11 @@
   font-family: 'Colgent';
   src: url('../font/Colgent Regular.ttf') format('truetype');
   font-family: 'FONTSPRING DEMO - The Seasons Light';
-  src: url('../Fontspring-DEMO-theseasons-lt.otf') format('truetype');
+  src: url('../font/Fontspring-DEMO-theseasons-lt.otf') format('truetype');
+  font-family: 'MADE TheArtist Script';
+  src: url('../font/MADE TheArtist Script PERSONAL USE.otf') format('truetype');
+  font-family: 'BDScript-Regular';
+  src: url('../font/FontsFree-Net-BeautifullyDelicious.ttf') format('truetype');
 }
 
 body {
@@ -146,4 +150,90 @@ hr.nav-line {
   box-shadow: 0px 0px 26px 3px rgba(0,0,0,0.1);
   color: black;
   border: solid 0.5px #64613e;
+}
+
+
+.about-heading {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+}
+
+.about-line {
+  display: flex;
+  align-items: center;
+  height: 80px;
+  padding-left: 20px;
+}
+
+.about-heading h1 {
+  font-family: 'FONTSPRING DEMO - The Seasons Light', sans-serif; 
+  font-size: 110px;
+  text-transform: uppercase;
+  margin-right: 30px;
+  margin-left: 105px;
+}
+
+.about-heading p {
+  text-align: center;
+  font-size: 20px;
+  font-style: italic;
+}
+
+.about-p {
+  display: flex;
+  width: 50%;
+  margin: 0 auto;
+}
+
+p.page-content {
+  color: red;
+  padding-left: 6%;
+  padding-bottom: 6%;
+  padding-right: 0;
+  font-size: 15px;
+  max-height: 100%;
+  max-width: 100%;
+  color: black;
+  columns: 2;
+  column-gap: 35px;
+  margin-right: 20px;
+  margin: 2%;
+  line-height: 1.9;
+  break-inside: avoid-column; 
+  margin-right: 5%;
+}
+
+.about-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.about-img {
+  max-width: 25%;
+  height: 400px;
+  margin-bottom: 40px;
+  margin-right: 20px;
+}
+
+hr#about-hr {
+  width: 93%;
+}
+
+p#journal {
+  font-family: 'MADE TheArtist Script', sans-serif; 
+  font-size: 50px;
+  margin-bottom: 0;
+}
+
+#long-dash {
+  font-size: 8px;
+}
+
+span#thejournal {
+  font-family: 'BDScript-Regular', sans-serif; 
+  font-size: 25px;
+  line-height: 1;
 }

@@ -1,18 +1,35 @@
 {% extends 'base.html' %}
 
 {% block content %}
+{% load static %}
 
-<h1>About The Journal</h1>
-<hr />
-<p class="page-content">
-  The Journal - a platform dedicated to curating insightful content across a spectrum of topics. 
-  <br> We believe in the power of words to inspire, educate, and transform lives. 
-  <br> Whether it's wellness tips, mental health resources, expert advice, or explorations into hobbies and lifestyle, 
-  <br> "The Journal" is your trusted companion on the journey to holistic well-being. 
-  <br> Our team of dedicated writers and experts are passionate about delivering content that resonates with your aspirations and interests. 
-  <br> We aim to provide a space where you can discover, learn, and engage with a diverse range of articles that empower you to lead a fulfilling life. 
-  <br>Join us in this enriching experience and embark on a path of self-discovery and growth with "The Journal".
-</p>
+<div class='about-heading'>
+  <div class='about-line'>
+    <h1>About</h1> 
+    <p>───────────</p>
+  </div>
+  <p id='journal'>The Journal</p>
+</div> 
+<div class='about-p'>
+  <p class="page-content">
+    <span id='long-dash'>────</span> a platform dedicated to  crafting insightful content across a spectrum of topics. 
+    <br> We believe in the power of words to inspire, educate, and make a positive impact. 
+    <br>
+    <br> Our dedicated team of writers and experts is passionate about creating content that resonates with your interests and aspirations. 
+    <br>
+    <br> Whether it's wellness tips, mental health resources, expert advice, or explorations into hobbies and lifestyle, 
+    <br> 
+    <br> <span id='thejournal'>the journal </span> ㅤ is your trusted source for inspiring ideas. 
+    <br> 
+    <br> We provide a space where you can immerse yourself in a diverse range of articles designed to inspire you for new experiences.
+  </p>
+</div>
+<div class='about-image'>
+  <img class="about-img" src="{% static 'images/about1.jpg' %}" alt="image" />
+  <img class="about-img" src="{% static 'images/about2.jpg' %}" alt="image" />
+  <img class="about-img" src="{% static 'images/about3.jpg' %}" alt="image" />
+</div>
+<hr id='about-hr' />
 
 {% endblock %}
 
