@@ -11,6 +11,33 @@
 <div class="landingVideo">
   <video id="landingVideo" autoplay muted loop src="{% static 'images/landing1.mov' %}"></video> 
 </div>
-
+<p id='landing-video-home'>The journal</p>
+<p id='dot-line'>♦───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────♦</p>
+<div class='about-section'>
+  <div class='about-pics'>
+    <img id='second-pic' class="about-img" src="{% static 'images/landing4.jpg' %}" alt="image" />
+    <img id='first-pic' class="about-img" src="{% static 'images/landing7.jpg' %}" alt="image" />
+  </div>
+  <div class='about-link'>
+    <p id='learn-more'>About <br> The Journal<p>
+    <a href="{% url 'about' %}">Tap Here</a>
+  </div>
+</div>
+<p id='dot-line'>♦───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────♦</p>
+<div class='articles-section'>
+  <div class='articles-pics'>
+    <img id='article-pic2' class="articles-img" src="{% static 'images/landing3.jpg' %}" alt="image" />
+    {% comment %} <img id='article-pic1' class="articles-img" src="{% static 'images/landing5.jpg' %}" alt="image" /> {% endcomment %}
+  </div>
+  <div class='articles-link'>
+    <p id='learn-more'><span id='articles'> all </span> <br> Articles<p>
+    <a href="{% url 'article-index' %}">
+      <img id='arrow' src="{% static 'images/arrow.png' %}" alt="arrow" />  
+    </a>
+  </div>
+</div>
+<hr id='landing-hr1' />
+<p id='landing-video-landing'>The journal</p>
+<hr id='landing-hr' />
 
 {% endblock %}

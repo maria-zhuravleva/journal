@@ -237,3 +237,11 @@ span#thejournal {
   font-size: 25px;
   line-height: 1;
 }
+
+p#landing-video-about {
+  font-family: 'BDScript-Regular', sans-serif; 
+  font-size: 30px;
+  line-height: 1;
+  text-align: right;
+  margin: 0 50px;
+}
