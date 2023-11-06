@@ -35,6 +35,7 @@
             {% endif %}
           </div>
           <h2 class="card-title">{{ article.title }}</h2>
+          <p class="topic"><small>{{ article.topic}}</small></p>
           <p class="created"><small>{{ article.created_at|date:"m.d.Y" }}</small></p>
           <p><small>{{ article.main_content}}</small></p>
           <p class="read-p">Read Article</p>

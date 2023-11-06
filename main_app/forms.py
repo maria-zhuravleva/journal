@@ -13,3 +13,11 @@
 
 
 
+
+from django.forms import ModelForm
+from .models import Article
+
+class ArticleForm(ModelForm):
+  class Meta:
+    model = Article
+    fields = ['topic', 'title', 'content_main', 'content_section_1', 'content_section_2']

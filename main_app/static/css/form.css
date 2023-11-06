@@ -36,7 +36,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 40vh;
+  height: 75vh;
+  margin-top: 0;
 }
 
 #create-article-table {
@@ -80,6 +81,7 @@ table tr {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 20px;
 }
 
 table td {
@@ -136,6 +138,10 @@ table td input:focus {
   text-transform: capitalize;
 }
 
+#create-button {
+  margin-bottom: 80px;
+}
+
 #signup-button:hover {
   border: solid 0.5px #64613e;
   box-shadow: 0px 0px 26px 3px rgba(0,0,0,0.1);
@@ -162,8 +168,8 @@ p.red-text {
   color: #64613e;
   font-size: 15px;
   font-style: italic;
-  padding-top: 30px;
-  padding-bottom: 5px;
+  /* padding-top: 30px;
+  padding-bottom: 5px; */
 }
 
 #login-form {
@@ -215,4 +221,28 @@ p.red-text {
 #signup-link a:hover {
   color: #64613e;
   border-bottom: solid 0.5px #64613e;
+}
+
+select#id_topic {
+  height: 30px;
+  width: 200px;
+  background-color: transparent;
+  outline: none;
+  border: solid 0.5px black;
+  padding: 5px;
+  margin: 0 auto;
+  font-family: 'FONTSPRING DEMO - The Seasons Light', sans-serif; 
+  font-size: 13px;
+  font-style: italic;
+  font-weight: 300;
+  box-shadow: 0px 0px 16px 5px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+p#create-paragraph {
+  font-family: 'BDScript-Regular', sans-serif; 
+  font-size: 30px;
+  line-height: 1;
+  text-align: right;
+  margin: 0 50px;
 }

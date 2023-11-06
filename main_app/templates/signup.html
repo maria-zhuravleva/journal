@@ -9,9 +9,6 @@
 
 <div class="page-header">
   <p id='signup'>Sign Up</p>
-  {% if error_message %}
-    <p class="red-text">{{ error_message }}</p>
-  {% endif %}
 </div>
 <form action="" method="post" class="signupform-container" autocomplete="off">
   {% csrf_token %}
@@ -19,6 +16,9 @@
     {{ form.as_table }}
   </table>
   <button type="submit" id='signup-button' class="btn submit">Sign Up</button>
+  {% if error_message %}
+    <p class="red-text">{{ error_message }}</p>
+  {% endif %}
 </form>
 
 {% endblock %}

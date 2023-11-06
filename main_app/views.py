@@ -8,6 +8,7 @@ from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import UserPassesTestMixin
+from .forms import ArticleForm
 from .models import Article, Photo
 # from .forms import PhotoEditForm
 import uuid
@@ -42,7 +43,7 @@ def article_detail(request, article_id):
 
 class ArticleCreate(UserPassesTestMixin, CreateView):
   model = Article
-  fields = ['title', 'content_main', 'content_section_1', 'content_section_2']
+  fields = ['topic', 'title', 'content_main', 'content_section_1', 'content_section_2']
 
   def form_valid(self, form):
     form.instance.author = self.request.user   

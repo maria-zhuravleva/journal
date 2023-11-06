@@ -3,6 +3,29 @@ from django.urls import reverse
 from django.utils import timezone
 from django.contrib.auth.models import User
 
+
+TOPIC_CHOICES = [
+  ('Advice, Digital, Social Media', 'Advice, Digital, Social Media'),
+  ('Advice, Lifestyle', 'Advice, Lifestyle'),
+  ('Arts and Culture', 'Arts and Culture'),
+  ('Beauty and Skincare', 'Beauty and Skincare'),
+  ('Books', 'Books'),
+  ('Education and Learning', 'Education and Learning'),
+  ('Fashion', 'Fashion'),
+  ('Fitness and Exercise', 'Fitness and Exercise'),
+  ('Food', 'Food'),
+  ('Interior Design', 'Interior Design'),
+  ('Mindfulness', 'Mindfulness'),
+  ('Movies', 'Movies'),
+  ('Music', 'Music'),
+  ('Nutrition', 'Nutrition'),
+  ('Phycology, Advice', 'Phycology, Advice'),
+  ('Photography', 'Photography'),
+  ('Recipes', 'Recipes'),
+  ('Stories', 'Stories'),
+  ('Travel', 'Travel'),
+]
+
 class Article(models.Model):
   title = models.CharField(max_length=150)
   content_main = models.TextField()  
@@ -10,6 +33,11 @@ class Article(models.Model):
   content_section_2 = models.TextField(null=True, blank=True) 
   likes = models.IntegerField(default=0)
   author = models.ForeignKey(User, on_delete=models.CASCADE)
+  topic = models.CharField(
+    max_length=50,
+    choices=TOPIC_CHOICES,
+    default=TOPIC_CHOICES[1][1]
+  )
   created_at = models.DateTimeField(default=timezone.now)
 
   def __str__(self):

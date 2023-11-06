@@ -9,9 +9,6 @@
 
 <div class="page-header">
   <p id='login'>Login</p>
-  {% if form.errors %}
-    <p class="red-text">Invalid login - try again</p>
-  {% endif %}
 </div>
 <section id='login-form'>
   <form action="{% url 'login' %}" method="post" class="login">
@@ -19,6 +16,9 @@
     {{ form.username.label_tag }} {{ form.username }}
     {{ form.password.label_tag }} {{ form.password }}
     <button type="submit" id='login-button' class="btn submit">Login</button>
+    {% if form.errors %}
+      <p class="red-text">Invalid login - try again</p>
+    {% endif %}
   </form>
   <p id='signup-link'>Don't have an account yet? <a href="{% url 'signup' %}">
     <br> Sign Up

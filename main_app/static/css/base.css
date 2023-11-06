@@ -97,6 +97,10 @@ hr.nav-line {
   height: 25vh;
 }
 
+form.login {
+  margin-top: -7%;
+}
+
 #delete-confirm,
 #delete-question {
   text-align: center;

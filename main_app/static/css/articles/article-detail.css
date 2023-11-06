@@ -237,3 +237,9 @@ p#landing-video-detail {
   text-align: right;
   margin: 0 50px;
 }
+
+.topic {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 18px;
+  width: 150px;
+}
