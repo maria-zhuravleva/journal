@@ -274,7 +274,6 @@ p#landing-video-about {
 
   header#main-header {
     margin: 0 auto;
-    /* padding-left: 200px; */
   }
   nav ul {
     text-align: center;
@@ -298,6 +297,97 @@ p#landing-video-about {
     width: 90%;
   }
 
-  /* Add any additional styles for iPhone XR here */
+  .about-heading h1 {
+    font-size: 50px;
+  }
+  
+  .about-heading p {
+    text-align: center;
+    font-size: 20px;
+    font-style: italic;
+  }
+  
+  .about-p {
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+  }
 
+  .about-line {
+    overflow: hidden;
+    margin-left: 0;
+    padding-left: 0;
+    width: 90%;
+  }
+  
+  .about-img {
+    max-width: 28%;
+    height: auto;
+    margin: 0 auto;
+    margin-bottom: 10px;
+  }
+
+  p.page-content {
+    line-height: 20px;
+  }
+
+  p#journal {
+    margin-top: 0;
+    font-size: 30px;
+  }
+}
+
+
+@media (min-width: 1853px){
+  .about-line {
+    height: auto;
+  }
+
+  .about-heading h1 {
+    margin: 0 auto;
+    padding-top: 50px;
+  }
+  
+  .about-heading p {
+    width: 50%;
+    text-align: center;
+    font-size: 20px;
+    font-style: italic;
+  }
+
+
+  .about-line {
+    margin: 0 auto;
+    height: auto;
+    width: 40%;
+  }
+  
+  .about-img {
+    height: auto;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    justify-content: center;
+  }
+  
+  img.about-img {
+    max-width: 25%;
+    margin: 0 20px;
+    margin-bottom: 10px;
+  }
+
+  p.page-content {
+    line-height: 30px;
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  p#journal {
+    margin-top: 0 auto;
+    font-size: 50px;
+    width: 100%;
+  }
+
+  p#landing-video-about {
+    margin-right: 80px;
+  }
 }
