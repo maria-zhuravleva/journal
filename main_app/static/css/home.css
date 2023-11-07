@@ -300,8 +300,6 @@ p#landing-video-landing {
 
 }
 
-/* animation */
-
 .landingPage.slide-out {
   animation: slideOut 1s forwards;
 }

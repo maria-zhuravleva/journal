@@ -98,14 +98,11 @@ table td li {
 
 table td input {
   height: 15px;
-  /* height: 10px; */
   width: 150px;
-  /* width: 130px; */
   background-color: transparent;
   outline: none;
   border: solid 0.5px black;
   padding: 20px;
-  /* padding: 10px; */
   margin: 0 auto;
   border-radius: 50%;
   font-family: 'FONTSPRING DEMO - The Seasons Light', sans-serif; 
@@ -168,8 +165,6 @@ p.red-text {
   color: #64613e;
   font-size: 15px;
   font-style: italic;
-  /* padding-top: 30px;
-  padding-bottom: 5px; */
 }
 
 #login-form {
@@ -186,15 +181,12 @@ p.red-text {
 
 #login-form input {
   height: 10px;
-  /* width: 150px; */
   width: 130px;
   background-color: transparent;
   outline: none;
   border: solid 0.5px black;
-  /* padding: 20px; */
   padding: 8px;
   margin: 0 auto;
-  /* border-radius: 50%; */
   font-family: 'FONTSPRING DEMO - The Seasons Light', sans-serif; 
   font-size: 13px;
   font-style: italic;

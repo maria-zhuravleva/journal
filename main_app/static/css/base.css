@@ -1,6 +1,4 @@
 @font-face {
-  font-family: 'Culture';
-  src: url('../font/Culture.otf') format('truetype');
   font-family: 'Colgent';
   src: url('../font/Colgent Regular.ttf') format('truetype');
   font-family: 'FONTSPRING DEMO - The Seasons Light';
@@ -30,7 +28,6 @@ body {
 body {
   background-color: #f5f0ea;
   font-family: 'Colgent', sans-serif; 
-  /* font-family: 'FONTSPRING DEMO - The Seasons Light', sans-serif;  */
 }
 
 .circle{
@@ -45,7 +42,6 @@ body {
 
 p#main-heading {
   font-family: 'FONTSPRING DEMO - The Seasons Light', sans-serif; 
-  /* font-family: 'Colgent', sans-serif;  */
   color: #191713;
   font-size: 40px;
   padding-top: 28px;
@@ -207,7 +203,6 @@ form.login {
 }
 
 p.page-content {
-  color: red;
   padding-left: 6%;
   padding-bottom: 6%;
   padding-right: 0;
