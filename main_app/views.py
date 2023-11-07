@@ -26,7 +26,7 @@ def about(request):
   return render(request, 'about.html')
 
 def article_index(request):
-  articles = Article.objects.all()
+  articles = Article.objects.all().order_by('-created_at')
   paginator = Paginator(articles, 9)  
 
   page_number = request.GET.get('page')
