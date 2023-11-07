@@ -1,6 +1,5 @@
 # The Journal 
 *The Journal* is a space dedicated to creating meaningful content on a wide range of topics.  
-We believe in the power of words to inspire, educate, and bring positivity into your life. 
 
 Whether it's wellness tips, mental health resources, practical advice, or explorations into hobbies and lifestyle,  
 *The Journal* is your go-to source for uplifting ideas.  
