@@ -73,7 +73,7 @@ class ArticleCreate(UserPassesTestMixin, CreateView):
 
 class ArticleUpdate(UserPassesTestMixin, UpdateView):
   model = Article
-  fields = ['title', 'content_main', 'content_section_1', 'content_section_2']
+  fields = ['topic', 'title', 'content_main', 'content_section_1', 'content_section_2']
 
   def test_func(self):
     return self.request.user.is_superuser

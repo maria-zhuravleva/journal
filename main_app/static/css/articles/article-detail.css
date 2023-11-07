@@ -36,10 +36,6 @@
   width: 100%;
 }
 
-/* img.article-img {
-  width: 650px;
-  height: 700px;
-} */
 
 .photo-section1,
 .photo-section2 {
@@ -60,7 +56,6 @@
   border-left: solid 1px black;
   padding-left: 15px;
 }
-
 
 
 #likeButton {
@@ -239,11 +234,18 @@ p#landing-video-detail {
   width: 150px;
 }
 
+#detail-hr.first-hr {
+  margin-top: 30px;
+}
+
 @media (max-width: 414px) and (max-height: 896px) {
   .article-title h1 {
     font-size: 40px;
   }
 
+  button#upload-photo {
+    font-weight: 400;
+  }
 
 }
 
