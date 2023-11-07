@@ -11,16 +11,11 @@
 
 {% block content %}
 
-{% comment %} <img src="{% static 'images/cool-cat.svg' %}" alt="A cool cat" />
-<img src="{% static 'images/happy-cat.svg' %}" alt="A happy cat" />
-<img src="{% static 'images/teacup-cat.svg' %}" alt="A cat in a teacup" />
-<img src="{% static 'images/cat-in-box.svg' %}" alt="A cat in a box" /> {% endcomment %}
 <section class="page-header">
   <p>Articles</p>
 </section>
-
 <section class="card-container">
-  {% for article in articles %}
+  {% for article in page_obj %}
     <div class="card">
       <a href="{% url 'article-detail' article.id %}">
         <div class="card-content">
@@ -55,7 +50,32 @@
       {% endif %} 
       <hr class="index-line" />
     </div>
-  {% endfor %}
+    {% endfor %}      
 </section>
+<div class="pagination">
+  <span class="step-links">
+    {% if page_obj.has_previous %}
+      <a href="?page={{ page_obj.previous_page_number }}">&lsaquo; Previous</a>
+    {% endif %}
+  
+    {% for i in page_obj.paginator.page_range %}
+      {% if i == page_obj.number %}
+        <span class="current current-page">{{ i }}</span>
+      {% else %}
+        <a href="?page={{ i }}">{{ i }}</a>
+      {% endif %}
+    {% endfor %}
+  
+    {% if page_obj.has_next %}
+      <a href="?page={{ page_obj.next_page_number }}">Next &rsaquo;</a>
+    {% endif %}
+  </span>
+</div>
+
+<div class='footer-index'>
+  <hr id='detail-hr' />   
+  <p id='landing-video-detail'>The journal</p>
+  <hr id='detail-hr' />
+</div>
 
 {% endblock %}

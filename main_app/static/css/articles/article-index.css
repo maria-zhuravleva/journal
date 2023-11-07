@@ -17,7 +17,7 @@
 }
 
 .card {
-  width: 22%; 
+  width: 30%; 
   min-height: 300px; 
   margin-bottom: 20px;
   padding-bottom: 15px;
@@ -110,6 +110,36 @@ hr.index-line {
   width: 85px;
 } 
 
+.footer-index p {
+  font-family: 'BDScript-Regular', sans-serif; 
+  font-size: 30px;
+  line-height: 1;
+  text-align: right;
+  margin: 0 50px;
+}
+
+hr#detail-hr {
+  width: 95%;
+}
+
+.current-page {
+  border-bottom: 0.5px solid #000; 
+}
+
+.pagination {
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.step-links a,
+.current-page {
+  display: inline-block;
+  padding: 5px 10px;
+  text-decoration: none;
+  color: #000;
+  margin: 0 2px;
+}
+
 @media (max-width: 414px) and (max-height: 896px) {
   
   .page-header p {
@@ -182,6 +212,11 @@ hr.index-line {
 
   .card-container {
     width: 50%;
+    margin: 0 auto;
+  }
+
+  .footer-index {
+    width: 90%;
     margin: 0 auto;
   }
 }

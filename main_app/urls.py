@@ -15,5 +15,4 @@ urlpatterns = [
   path('accounts/login/', LoginView.as_view(template_name='login.html'), name='login'),
   path('articles/<int:article_id>/add-photo/', views.add_photo, name='add-photo'),
   path('delete-photo/<int:photo_id>/', views.delete_photo, name='delete-photo'),
-  # path('edit-photo/<int:photo_id>/', views.edit_photo, name='edit-photo')
 ]
