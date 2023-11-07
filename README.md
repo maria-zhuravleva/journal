@@ -15,25 +15,25 @@ About Page
 Mobile Views
 ![Mobile Views Screenshot](main_app/static/images/mobile-views.jpg)
 
-![The Journal Mobile Version](main_app/static/images/journal-video.mov)
+![The Journal Mobile Version](https://imgur.com/a/dejD3ho)
 
 
 ## [Explore a diverse range of insightful articles crafted just for you](https://mz-powder-peak.fly.dev/)
 
-## How to Navigate
-- **Home Page** 
-From the home page, users have two main options:
-* About Page: To learn more about the app and its purpose.
-* All Articles: To explore a curated list of articles spanning various topics.
+- **Home Page**  
+  From the home page, users have two main options:
+  * About Page: To learn more about the app and its purpose.
+  * All Articles: To explore a curated list of articles spanning various topics.
 
-- **All Articles Page**
-Here, users can browse through a collection of articles, each focusing on a different subject. They can click on an article title to view its details.
+- **All Articles Page**  
+  Here, users can browse through a collection of articles, each focusing on a different subject. They can click on an article title to view its details.
 
-- **Article Details Page**
-On this page, users can delve deeper into a specific topic. They'll find comprehensive information, engaging content, and relevant media related to the chosen article.
+- **Article Details Page**  
+  On this page, users can delve deeper into a specific topic. They'll find comprehensive information, engaging content, and relevant media related to the chosen article.
 
-- **About Page**
-Users visiting this page will discover additional insights about the app, its mission, and the team behind it.
+- **About Page**  
+  Users visiting this page will discover additional insights about the app, its mission, and the team behind it.
+
 
 ## Features
 - **Inspiration and Insightful Content:** The app is dedicated to crafting insightful content across a spectrum of topics, designed to inspire, educate, and make a positive impact.
