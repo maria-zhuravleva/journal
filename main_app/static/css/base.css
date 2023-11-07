@@ -11,6 +11,22 @@
   src: url('../font/FontsFree-Net-BeautifullyDelicious.ttf') format('truetype');
 }
 
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  height: 100%;
+}
+
 body {
   background-color: #f5f0ea;
   font-family: 'Colgent', sans-serif; 
@@ -248,4 +264,40 @@ p#landing-video-about {
   line-height: 1;
   text-align: right;
   margin: 0 50px;
+}
+
+@media only screen 
+  and (device-width: 414px) 
+  and (device-height: 896px) 
+  and (-webkit-device-pixel-ratio: 2) {
+  
+
+  header#main-header {
+    margin: 0 auto;
+    /* padding-left: 200px; */
+  }
+  nav ul {
+    text-align: center;
+    margin: 0;
+  }
+
+  nav li {
+    margin: 5px 0;
+  }
+
+  nav a {
+    font-size: 15px;
+  }
+
+  img#user-icon {
+    width: 20px;
+    height: 20px;
+  }
+  
+  video#landingVideo {
+    width: 90%;
+  }
+
+  /* Add any additional styles for iPhone XR here */
+
 }
