@@ -4,7 +4,7 @@ We believe in the power of words to inspire, educate, and bring positivity into 
 Whether it's wellness tips, mental health resources, practical advice, or explorations into hobbies and lifestyle, *The Journal* is your go-to source for uplifting ideas. Dive into a variety of articles designed to inspire you for new adventures and experiences.
 
 Home Page
-![Home Page Screenshot](main_app/static/images/home-page.png)
+![Home Page](main_app/static/images/landing.gif)
 
 Article Index Page
 ![Article Index Page Screenshot](main_app/static/images/articles-page.png)
