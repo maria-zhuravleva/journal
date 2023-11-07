@@ -9,11 +9,6 @@
   padding: 35px;
 }
 
-/* .article-title {
-  border-left: solid 1px black;
-  padding-left: 20px;
-} */
-
 .article-title h1 {
   font-size: 90px;
   text-transform: uppercase;
@@ -242,4 +237,19 @@ p#landing-video-detail {
   color: rgba(0, 0, 0, 0.5);
   font-size: 18px;
   width: 150px;
+}
+
+@media (max-width: 414px) and (max-height: 896px) {
+  .article-title h1 {
+    font-size: 40px;
+  }
+
+
+}
+
+@media (min-width: 1853px){
+  .article-container {
+    width: 70%;
+    margin: 0 auto;
+  }
 }
