@@ -15,7 +15,7 @@ About Page
 Mobile Views
 ![Mobile Views Screenshot](main_app/static/images/mobile-views.jpg)
 
-![The Journal Mobile Version](https://imgur.com/a/dejD3ho)
+![The Journal Mobile Version](main_app/static/images/journal-video.gif)
 
 
 ## [Explore a diverse range of insightful articles crafted just for you](https://mz-powder-peak.fly.dev/)
