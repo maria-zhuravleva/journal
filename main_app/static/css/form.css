@@ -246,3 +246,32 @@ p#create-paragraph {
   text-align: right;
   margin: 0 50px;
 }
+
+@media (min-width: 1853px){
+  .create-form-container {
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  #detail-hr {
+    width: 80%;
+  }
+
+  p#create-paragraph {
+    margin: 0 250px;
+  }
+}
+
+@media (max-width: 414px) and (max-height: 896px) {
+  p#create-paragraph {
+    margin: 0 20px;
+  }
+
+  #create-button {
+    margin-bottom: 150px;
+  }
+
+  /* #detail-hr {
+    margin-top: 30px;
+  } */
+}
