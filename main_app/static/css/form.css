@@ -271,7 +271,11 @@ p#create-paragraph {
     margin-bottom: 150px;
   }
 
-  /* #detail-hr {
-    margin-top: 30px;
-  } */
+  .login {
+    padding-top: 35px;
+  }
+
+  #signup-link {
+    margin-top: 50px;
+  }
 }
