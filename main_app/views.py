@@ -10,6 +10,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.contrib.auth.mixins import UserPassesTestMixin
 from .forms import ArticleForm
+from .forms import SearchForm
 from .models import Article, Photo
 import uuid
 import boto3
@@ -26,13 +27,27 @@ def about(request):
   return render(request, 'about.html')
 
 def article_index(request):
+  search_form = SearchForm(request.GET)
   articles = Article.objects.all().order_by('-created_at')
-  paginator = Paginator(articles, 9)  
+  no_results = False
 
+  if search_form.is_valid():
+    search_query = search_form.cleaned_data.get('search_query')
+    if search_query:
+      articles = articles.filter(topic__icontains=search_query)
+      if not articles.exists():
+        no_results = True
+
+  paginator = Paginator(articles, 9)
   page_number = request.GET.get('page')
   page_obj = paginator.get_page(page_number)
 
-  return render(request, 'articles/index.html', { 'page_obj': page_obj })
+  return render(request, 'articles/index.html', {
+    'page_obj': page_obj,
+    'search_form': search_form,
+    'no_results': no_results,
+  })
+
 
 @login_required
 def article_detail(request, article_id):

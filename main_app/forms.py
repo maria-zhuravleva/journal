@@ -15,7 +15,15 @@
 
 
 from django.forms import ModelForm
+from django import forms
 from .models import Article
+
+
+class SearchForm(forms.Form):
+  search_query = forms.CharField(max_length=100, label=False, required=False,
+    widget=forms.TextInput(attrs={'placeholder': 'Search by topic...'}),
+  )
+
 
 class ArticleForm(ModelForm):
   class Meta:

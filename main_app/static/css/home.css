@@ -194,7 +194,7 @@ p#landing-video-landing {
   #arrow {
     width: 70px;
     height: 15px;
-    padding-right: 250px;
+    margin-right: 220px;
   }
 
   #article-pic2 {
@@ -251,7 +251,7 @@ p#landing-video-landing {
   .about-link,
   .articles-link {
     margin-right: 20px;
-    /* margin: 0 auto; */
+
   }
 
   .about-pics img,

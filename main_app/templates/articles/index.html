@@ -11,8 +11,24 @@
 
 {% block content %}
 
-<section class="page-header">
+<div class='heading'>
   <p>Articles</p>
+</div>
+<section class="page-header">
+  <div class='paragraphs'>
+    {% if no_results %}
+    <p id='no-results'>No results found</p>
+    {% endif %}
+  </div>
+  <div class='search-form-container'>
+    <form id='search-form' method="get">
+      {% csrf_token %}
+      {{ search_form }}
+      <button type="submit">
+        <img id='search' src="{% static 'images/search.png' %}" alt="search" /> 
+      </button>
+    </form>
+  </div>
 </section>
 <section class="card-container">
   {% for article in page_obj %}

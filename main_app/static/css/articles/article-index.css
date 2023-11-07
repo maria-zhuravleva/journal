@@ -1,9 +1,10 @@
-.page-header {
+.page-header,
+.heading {
   text-align: center;
   margin-top: 0;
 }
 
-.page-header p {
+.heading p {
   font-size: 60px;
   margin-top: 0;
   margin-bottom: 0;
@@ -140,6 +141,63 @@ hr#detail-hr {
   margin: 0 2px;
 }
 
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px; 
+}
+
+.paragraphs {
+  flex: 1; 
+  margin-right: 10px; 
+}
+
+.search-form-container {
+  flex: 1; 
+  margin-right: 10px; 
+}
+
+#search-form {
+  float: right;
+  padding-right: 35px;
+}
+
+#search-form input {
+  height: 25px;
+  width: 145px;
+  background-color: transparent;
+  outline: none;
+  border: solid 0.5px black;
+  padding: 8px;
+  margin: 0 auto;
+  font-family: 'FONTSPRING DEMO - The Seasons Light', sans-serif; 
+  font-size: 13px;
+  font-style: italic;
+  font-weight: 300;
+  text-align: center;
+  box-shadow: 0px 0px 16px 5px rgba(0,0,0,0.1);
+}
+
+#search-form button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+  margin-left: 10px;
+}
+
+#search-form button img {
+  width: 21px;
+  height: 21px; 
+}
+
+
+p#no-results {
+  font-size: 18px;
+}
+
 @media (max-width: 414px) and (max-height: 896px) {
   
   .page-header p {
@@ -203,6 +261,43 @@ hr#detail-hr {
     font-size: 13px;
   }
 
+  .heading p {
+    font-size: 30px;
+  }
+
+  .paragraphs {
+    margin-right: 0; 
+  }
+
+  .search-form-container {
+    margin-right: 5px; 
+  }
+
+  #search-form {
+    padding-right: 5px;
+  }
+
+  #search-form input {
+    height: 20px;
+    width: 115px;
+    padding: 5px;
+    font-size: 11px;
+  }
+
+  #search-form button {
+    margin-left: 5px;
+  }
+
+  #search-form button img {
+    width: 18px;
+    height: 18px; 
+  }
+
+
+  p#no-results {
+    font-size: 13px;
+  }
+
 }
 
 @media (min-width: 1853px){
@@ -219,4 +314,16 @@ hr#detail-hr {
     width: 90%;
     margin: 0 auto;
   }
+
+  .page-header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  
+  #search-form {
+    float: right;
+    margin-right: 537px; 
+  }
+
 }
