@@ -1,4 +1,3 @@
-
 .article-container {
   display: flex;
   justify-content: space-between;
@@ -10,7 +9,7 @@
 }
 
 .article-title h1 {
-  font-size: 90px;
+  font-size: 60px;
   text-transform: uppercase;
   margin-bottom: 0;
   margin-top: 0;
@@ -108,8 +107,8 @@
 
 
 .photo-menu img {
-  width:20px;
-  height: 5px;
+  width:50px;
+  height: 25px;
   padding: 10px 15px; 
 }
 
@@ -120,8 +119,6 @@
 .photo-menu .dropdown-content {
   display: none;
   position: absolute;
-  /* background-color: #f9f9f9; */
-  /* background-color: #b6a593; */
   background-color: #392e26;
   min-width: 50px;
   box-shadow: 0px 28px 16px 0px rgba(0,0,0,0.1);
@@ -212,7 +209,6 @@
 }
 
 #upload-photo:hover {
-  /* border-bottom: 1px solid black; */
   color:#64613e;
 }
 
@@ -240,7 +236,7 @@ p#landing-video-detail {
 
 @media (max-width: 414px) and (max-height: 896px) {
   .article-title h1 {
-    font-size: 40px;
+    font-size: 30px;
   }
 
   button#upload-photo {
