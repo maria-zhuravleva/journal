@@ -27,7 +27,7 @@ body {
 
 body {
   background-color: #f5f0ea;
-  font-family: 'Colgent', sans-serif; 
+  font-family: 'Colgent', 'FONTSPRING DEMO - The Seasons Light', 'Bodoni Moda', sans-serif; 
 }
 
 .circle{
@@ -183,7 +183,7 @@ form.login {
 }
 
 .about-heading h1 {
-  font-family: 'FONTSPRING DEMO - The Seasons Light', sans-serif; 
+  font-family: 'FONTSPRING DEMO - The Seasons Light', 'Bodoni Moda', sans-serif; 
   font-size: 110px;
   text-transform: uppercase;
   margin-right: 30px;
@@ -238,7 +238,7 @@ hr#about-hr {
 }
 
 p#journal {
-  font-family: 'MADE TheArtist Script', sans-serif; 
+  font-family: 'MADE TheArtist Script', 'BDScript-Regular', sans-serif; 
   font-size: 50px;
   margin-bottom: 0;
 }
