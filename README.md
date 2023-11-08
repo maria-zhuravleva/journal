@@ -64,7 +64,7 @@ Mobile Views
 
 ## Credits
 - **Images:** [Pinterest](https://www.pinterest.com/)
-- **Font:** [Dafontfree](https://www.dafontfree.io/the-seasons-font/)
+- **Font:** [Dafontfree](https://www.dafontfree.io/)
 
 
 ## Ice Box: Future Improvements
