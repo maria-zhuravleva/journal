@@ -141,7 +141,7 @@ def add_photo(request, article_id):
   return redirect('article-detail', article_id=article_id)
 
 
-
+@user_passes_test(lambda u: u.is_superuser)
 @require_http_methods(["POST", "DELETE"])
 def delete_photo(request, photo_id):
   photo = get_object_or_404(Photo, id=photo_id)

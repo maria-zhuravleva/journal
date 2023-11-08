@@ -29,19 +29,21 @@
         {% for photo in photo_section1 %}
           <div class="photo-container">
             <img src="{{ photo.url }}" alt="A photo of {{ article.title }}" class="article-img">
-            <div class="photo-menu photoMenu">
-              <img 
-                class="photo-menu-icon"
-                src="{% static 'images/photo-menu.png' %}" 
-                alt="A card logo"
-              >
-              <div class="dropdown-content">
-                <form action="{% url 'delete-photo' photo.id %}" method="POST">
-                  {% csrf_token %}
-                  <button type="submit" id="delete-photo" class="delete-button deleteButton">delete</button>
-                </form>
+            {% if user.is_superuser %}
+              <div class="photo-menu photoMenu">
+                <img 
+                  class="photo-menu-icon"
+                  src="{% static 'images/photo-menu.png' %}" 
+                  alt="A card logo"
+                >
+                <div class="dropdown-content">
+                  <form action="{% url 'delete-photo' photo.id %}" method="POST">
+                    {% csrf_token %}
+                    <button type="submit" id="delete-photo" class="delete-button deleteButton">delete</button>
+                  </form>
+                </div>
               </div>
-            </div>
+            {% endif %}
           </div>
         {% endfor %}
       </div>
@@ -52,19 +54,21 @@
         {% for photo in photo_section2 %}
           <div class="photo-container">
             <img src="{{ photo.url }}" alt="A photo of {{ article.title }}" class="article-img">
-            <div class="photo-menu photoMenu">
-              <img 
-                class="photo-menu-icon"
-                src="{% static 'images/photo-menu.png' %}" 
-                alt="A card logo"
-              >
-              <div class="dropdown-content">
-                <form action="{% url 'delete-photo' photo.id %}" method="POST">
-                  {% csrf_token %}
-                  <button type="submit" id="delete-photo" class="delete-button deleteButton">delete</button>
-                </form>
+            {% if user.is_superuser %}
+              <div class="photo-menu photoMenu">
+                <img 
+                  class="photo-menu-icon"
+                  src="{% static 'images/photo-menu.png' %}" 
+                  alt="A card logo"
+                >
+                <div class="dropdown-content">
+                    <form action="{% url 'delete-photo' photo.id %}" method="POST">
+                      {% csrf_token %}
+                      <button type="submit" id="delete-photo" class="delete-button deleteButton">delete</button>
+                    </form>
+                </div>
               </div>
-            </div>
+            {% endif %}
           </div>
         {% endfor %}
       </div>
