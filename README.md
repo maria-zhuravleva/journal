@@ -57,7 +57,7 @@ Mobile Views
 ## Technologies Used
 - **Frontend:** HTML5, CSS3, JavaScript
 - **Backend:** Python, Django, Neon
-- **Database:** SQL
+- **Database:** PostgreSQL 
 - **Deployment:** Fly.io
 - **Version Control:** Git and GitHub
 
