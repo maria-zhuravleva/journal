@@ -24,6 +24,7 @@ Mobile Views
 
 ## [Explore a diverse range of insightful articles crafted just for you](https://mariasthejournal.fly.dev/)
 
+## How to Navigate
 - **Home Page**  
   From the home page, users have two main options:
   * About Page: To learn more about the app and its purpose.
