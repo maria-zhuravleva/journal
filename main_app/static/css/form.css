@@ -85,6 +85,10 @@
   padding-bottom: 25%;
 }
 
+textarea#id_content_main {
+  white-space: pre-wrap;
+}
+
 
 table {
   margin-bottom: 20px;
@@ -318,7 +322,7 @@ p#create-paragraph {
       font-size: 8px;
     }
     .signupform-container {
-      padding: 20px;
-      padding-bottom: 20%;
-    }
+    padding: 20px;
+    padding-bottom: 20%;
+  }
   }

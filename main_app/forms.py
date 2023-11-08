@@ -10,6 +10,8 @@ class SearchForm(forms.Form):
 
 
 class ArticleForm(ModelForm):
+  content_main = forms.CharField(widget=forms.Textarea(attrs={'wrap': 'hard'}))
   class Meta:
     model = Article
     fields = ['topic', 'title', 'content_main', 'content_section_1', 'content_section_2']
+    

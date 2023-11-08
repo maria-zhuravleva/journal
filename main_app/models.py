@@ -19,11 +19,12 @@ TOPIC_CHOICES = [
   ('Movies', 'Movies'),
   ('Music', 'Music'),
   ('Nutrition', 'Nutrition'),
-  ('Phycology, Advice', 'Phycology, Advice'),
+  ('Psycholody, Advice', 'Psychology, Advice'),
   ('Photography', 'Photography'),
   ('Recipes', 'Recipes'),
   ('Stories', 'Stories'),
   ('Travel', 'Travel'),
+  ('Hobbies', 'Hobbies'),
 ]
 
 class Article(models.Model):

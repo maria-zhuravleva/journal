@@ -22,7 +22,7 @@
       <p class="created"><small>{{ article.created_at|date:"m.d.Y" }}</small></p>
     </div>
     <div class="content-main">
-      <p>{{ article.content_main }}</p>
+      <p>{{ article.content_main|linebreaks }}</p>
     </div>
     <div class="media-container">
       <div class="photo-section1">
@@ -48,7 +48,7 @@
         {% endfor %}
       </div>
       <div class="content-section1">
-        <p>{{ article.content_section_1 }}</p>
+        <p>{{ article.content_section_1|linebreaks }}</p>
       </div>
       <div class="photo-section2">
         {% for photo in photo_section2 %}
@@ -73,7 +73,7 @@
         {% endfor %}
       </div>
       <div class="content-section2">
-        <p>{{ article.content_section_2 }}</p>
+        <p>{{ article.content_section_2|linebreaks }}</p>
       </div>
     </div>
     {% if user.is_authenticated %}
