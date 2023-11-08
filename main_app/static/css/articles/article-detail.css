@@ -42,9 +42,12 @@
   justify-content: space-between;
 }
 
-.photo-section1 .article-img {
-  width: 83%;  
-  height: 100%;
+.photo-section1 {
+  width: 100%;
+}
+
+.article-img {
+  width: 95%;  
 }
 
 .photo-section2 img {

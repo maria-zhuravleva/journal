@@ -1,4 +1,4 @@
-@font-face {
+/* @font-face {
   font-family: 'Colgent';
   src: url('../font/Colgent Regular.ttf') format('truetype');
   font-family: 'FONTSPRING DEMO - The Seasons Light';
@@ -7,7 +7,28 @@
   src: url('../font/MADE TheArtist Script PERSONAL USE.otf') format('truetype');
   font-family: 'BDScript-Regular';
   src: url('../font/FontsFree-Net-BeautifullyDelicious.ttf') format('truetype');
+} */
+
+@font-face {
+  font-family: 'Colgent';
+  src: url('../font/Colgent Regular.ttf') format('truetype');
 }
+
+@font-face {
+  font-family: 'FONTSPRING DEMO - The Seasons Light';
+  src: url('../font/Fontspring-DEMO-theseasons-lt.otf') format('truetype');
+}
+
+@font-face {
+  font-family: 'MADE TheArtist Script';
+  src: url('../font/MADE TheArtist Script PERSONAL USE.otf') format('truetype');
+}
+
+@font-face {
+  font-family: 'BDScript-Regular';
+  src: url('../font/FontsFree-Net-BeautifullyDelicious.ttf') format('truetype');
+}
+
 
 * {
   box-sizing: border-box;
