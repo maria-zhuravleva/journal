@@ -254,3 +254,17 @@ p#landing-video-detail {
     margin: 0 auto;
   }
 }
+
+@media only screen 
+  and (min-device-width: 428px) 
+  and (max-device-width: 926px) 
+  and (-webkit-device-pixel-ratio: 3) {
+    
+    .article-title h1 {
+      font-size: 30px;
+    }
+  
+    button#upload-photo {
+      font-weight: 400;
+    }
+  }

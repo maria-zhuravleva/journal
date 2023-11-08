@@ -271,3 +271,24 @@ p#create-paragraph {
     margin-top: 50px;
   }
 }
+
+@media only screen 
+  and (min-device-width: 428px) 
+  and (max-device-width: 926px) 
+  and (-webkit-device-pixel-ratio: 3) {
+    p#create-paragraph {
+      margin: 0 20px;
+    }
+  
+    #create-button {
+      margin-bottom: 150px;
+    }
+  
+    .login {
+      padding-top: 35px;
+    }
+  
+    #signup-link {
+      margin-top: 50px;
+    }
+  }

@@ -326,3 +326,106 @@ p#no-results {
     margin-right: 537px; 
   }
 }
+
+@media only screen 
+  and (min-device-width: 428px) 
+  and (max-device-width: 926px) 
+  and (-webkit-device-pixel-ratio: 3) {
+    .page-header p {
+      font-size: 30px;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  
+    .card-container {
+      justify-content: space-between;
+      overflow: hidden;
+    }
+  
+    .card {
+      width: 30%;
+    }
+  
+    
+    .card-title {
+      font-size: 15px;
+      margin-top: 5px;
+      margin-bottom: 3px;
+    }
+    
+  
+    .card-content p {
+      margin: 0;
+    }
+    
+    
+    #likeButton {
+      width: 10px;
+      height: 10px;
+      margin-left: 20px;
+    }
+    
+    hr.index-line {
+      height: 0.5px; 
+      background-color: black;
+      border: none;
+      width: 80%;
+      margin-top: 10px; 
+    }
+    
+    .created {
+      color: rgba(0, 0, 0, 0.5);
+      font-size: 10px;
+      width: 50px;
+      border-right: solid 1px #ccc;
+    }
+    
+    .topic {
+      color: rgba(0, 0, 0, 0.5);
+      font-size: 13px;
+      width: 90px;
+    }
+    
+    .read-p {
+      cursor: pointer;
+      padding-top: 20px;
+      font-size: 13px;
+    }
+  
+    .heading p {
+      font-size: 30px;
+    }
+  
+    .paragraphs {
+      margin-right: 0; 
+    }
+  
+    .search-form-container {
+      margin-right: 5px; 
+    }
+  
+    #search-form {
+      padding-right: 5px;
+    }
+  
+    #search-form input {
+      height: 20px;
+      width: 115px;
+      padding: 5px;
+      font-size: 11px;
+    }
+  
+    #search-form button {
+      margin-left: 5px;
+    }
+  
+    #search-form button img {
+      width: 18px;
+      height: 18px; 
+    }
+  
+  
+    p#no-results {
+      font-size: 13px;
+    }
+  }
