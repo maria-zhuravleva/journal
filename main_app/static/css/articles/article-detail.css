@@ -194,6 +194,7 @@
 }
   
 #upload-photo {
+  color: black;
   font-family: 'FONTSPRING DEMO - The Seasons Light', sans-serif; 
   border-top: 1px solid transparent;
   border-bottom: 1px solid transparent;
@@ -259,7 +260,7 @@ p#landing-video-detail {
   and (min-device-width: 428px) 
   and (max-device-width: 926px) 
   and (-webkit-device-pixel-ratio: 3) {
-    
+
     .article-title h1 {
       font-size: 30px;
     }

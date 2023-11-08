@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
       document.querySelector('.landingPage').classList.add('slide-out')
       setTimeout(function() {
         window.location.href = anchor.getAttribute('href')
-      }, 100)
+      }, 500)
     }
   })
 })

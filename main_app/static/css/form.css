@@ -36,7 +36,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 75vh;
+  height: 85vh;
   margin-top: 0;
 }
 
@@ -72,6 +72,19 @@
   outline: none;
   font-style: italic;
 }
+
+.signupform-container {
+  margin-top: 0;
+  max-width: 100%;
+  width: 440px; 
+  height: 70vh;
+  margin: 0 auto;
+  padding: 5px;
+  box-sizing: border-box;
+  overflow: hidden; 
+  padding-bottom: 25%;
+}
+
 
 table {
   margin-bottom: 20px;
@@ -118,7 +131,7 @@ table td input:focus {
 }
 
 .helptext {
-  font-size: 12px;
+  font-size: 15px;
   font-style: italic;
 }
 
@@ -202,6 +215,7 @@ p.red-text {
 
 #signup-link {
   font-style: italic;
+  padding-top: 40px;
 }
 
 #signup-link a {
@@ -270,6 +284,14 @@ p#create-paragraph {
   #signup-link {
     margin-top: 50px;
   }
+
+  .helptext {
+    font-size: 8px;
+  }
+  .signupform-container {
+    padding: 20px;
+    padding-bottom: 20%;
+  }
 }
 
 @media only screen 
@@ -290,5 +312,13 @@ p#create-paragraph {
   
     #signup-link {
       margin-top: 50px;
+    }
+
+    .helptext {
+      font-size: 8px;
+    }
+    .signupform-container {
+      padding: 20px;
+      padding-bottom: 20%;
     }
   }

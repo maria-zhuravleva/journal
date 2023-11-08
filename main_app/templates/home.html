@@ -9,10 +9,10 @@
 {% block content %}
 <div class="landingPage">
   <div class="landingVideo">
-    <video id="landingVideo" autoplay muted loop src="{% static 'images/landing1.mov' %}"></video> 
+    <img id="landingVideo"  src="{% static 'images/landing-gif.gif' %}" alt="landing-video" /> 
   </div>
   <p id='landing-video-home'>The journal</p>
-  <p id='dot-line'>♦───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────♦</p>
+  <p id='dot-line'>───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────</p>
   <div class='about-section'>
     <div class='about-pics'>
       <img id='second-pic' class="about-img slide-in" src="{% static 'images/landing4.png' %}" alt="image" />
@@ -23,7 +23,7 @@
       <a href="{% url 'about' %}" id="tapHere">Tap Here</a>
     </div>
   </div>
-  <p id='dot-line'>♦───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────♦</p>
+  <p id='dot-line'>───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────</p>
   <div class='articles-section'>
     <div class='articles-pics'>
       <img id='article-pic2' class="articles-img slide-in" src="{% static 'images/landing3.png' %}" alt="image" />
