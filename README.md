@@ -22,7 +22,7 @@ Mobile Views
 ![The Journal Mobile Version](main_app/static/images/journal-video.gif)
 
 
-## [Explore a diverse range of insightful articles crafted just for you](https://mz-powder-peak.fly.dev/)
+## [Explore a diverse range of insightful articles crafted just for you](https://mariasthejournal.fly.dev/)
 
 - **Home Page**  
   From the home page, users have two main options:
