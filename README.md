@@ -4,8 +4,6 @@
 Whether it's wellness tips, mental health resources, practical advice, or explorations into hobbies and lifestyle,  
 *The Journal* is your go-to source for uplifting ideas.  
 
-Dive into a variety of articles designed to inspire you for new adventures and experiences.
-
 ## [Explore a diverse range of insightful articles crafted just for you](https://mariasthejournal.fly.dev/)
 
 Home Page
