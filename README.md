@@ -53,7 +53,6 @@ Mobile Views
 
 - **Intuitive Navigation:** User-friendly navigation allows seamless movement between pages. Easily transition from the home page to explore articles, dive into specific topics, or learn more about the app's mission.
 
-- **Responsive Design:** Whether you're using a desktop computer or mobile device, the app adapts to provide an optimal viewing experience on any screen size.
 
 ## Technologies Used
 - **Frontend:** HTML5, CSS3, JavaScript
