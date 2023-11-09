@@ -6,6 +6,7 @@ Whether it's wellness tips, mental health resources, practical advice, or explor
 
 Dive into a variety of articles designed to inspire you for new adventures and experiences.
 
+## [Explore a diverse range of insightful articles crafted just for you](https://mariasthejournal.fly.dev/)
 
 Home Page
 ![Home Page](main_app/static/images/landing.gif)
@@ -22,7 +23,6 @@ Mobile Views
 ![The Journal Mobile Version](main_app/static/images/journal-video.gif)
 
 
-## [Explore a diverse range of insightful articles crafted just for you](https://mariasthejournal.fly.dev/)
 
 ## How to Navigate
 - **Home Page**  
