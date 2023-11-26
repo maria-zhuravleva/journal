@@ -59,6 +59,7 @@ Mobile Views
 - **Backend:** Python, Django, Neon
 - **Database:** PostgreSQL 
 - **Deployment:** Fly.io
+- **Cloud Storage:** Amazon AWS S3
 - **Version Control:** Git and GitHub
 
 ## Credits
